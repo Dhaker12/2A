@@ -44,6 +44,16 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 
 		<!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
+		<style>
+			a
+			{
+				color: white;
+			}
+			a:hover
+			{
+				color: orange;
+			}
+		</style>
 
 	</head>
 	<body>
@@ -283,11 +293,12 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 						</div>
 					</div>
 				
+					
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
+									<li class="nav-active">
 										<a href="index.html">
 											<i class="fa fa-home" aria-hidden="true"></i>
 											<span>Dashboard</span>
@@ -303,7 +314,7 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-copy" aria-hidden="true"></i>
-											<span>Pages</span>
+											<span>Actuality</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -386,7 +397,7 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>UI Elements</span>
+											<span>Teams</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -499,7 +510,7 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Forms</span>
+											<span>Players</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -534,48 +545,29 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 											</li>
 										</ul>
 									</li>
-									<li class="nav-parent nav-expanded nav-active">
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>Tables</span>
+											<span>Store</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="tables-basic.html">
-													 Basic
+												<a href="forms-validation.html">
+													 Manager
 												</a>
 											</li>
 											<li>
-												<a href="tables-advanced.html">
-													 Advanced
+												<a href="affichage.php">
+													 Product
 												</a>
 											</li>
-											<li>
-												<a href="tables-responsive.html">
-													 Responsive
-												</a>
-											</li>
-											<li class="nav-active">
-												<a href="tables-editable.html">
-													 Editable
-												</a>
-											</li>
-											<li>
-												<a href="tables-ajax.html">
-													 Ajax
-												</a>
-											</li>
-											<li>
-												<a href="tables-pricing.html">
-													 Pricing
-												</a>
-											</li>
+
 										</ul>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-map-marker" aria-hidden="true"></i>
-											<span>Maps</span>
+											<span>Orders</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -598,7 +590,7 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Layouts</span>
+											<span>Carts</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -626,7 +618,7 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-align-left" aria-hidden="true"></i>
-											<span>Menu Levels</span>
+											<span>Clients</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -656,70 +648,51 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 											</li>
 										</ul>
 									</li>
-									<li>
-										<a href="http://themeforest.net/item/porto-responsive-html5-template/4106987?ref=Okler" target="_blank">
-											<i class="fa fa-external-link" aria-hidden="true"></i>
-											<span>Front-End <em class="not-included">(Not Included)</em></span>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-columns" aria-hidden="true"></i>
+											<span>Tournaments</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="#">
+													 ayoub
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Boxed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Menu Collapsed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Scroll
+												</a>
+											</li>
+										</ul>
 									</li>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-columns" aria-hidden="true"></i>
+											<span>Customer service</span>
+										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="affichageRec.php">
+													 Reclamation
+												</a>
+											</li>
+										</ul>
+									</li>
+									
 								</ul>
 							</nav>
-				
-							<hr class="separator" />
-				
-							<div class="sidebar-widget widget-tasks">
-								<div class="widget-header">
-									<h6>Projects</h6>
-									<div class="widget-toggle">+</div>
-								</div>
-								<div class="widget-content">
-									<ul class="list-unstyled m-none">
-										<li><a href="#">Porto HTML5 Template</a></li>
-										<li><a href="#">Tucson Template</a></li>
-										<li><a href="#">Porto Admin</a></li>
-									</ul>
-								</div>
-							</div>
-				
-							<hr class="separator" />
-				
-							<div class="sidebar-widget widget-stats">
-								<div class="widget-header">
-									<h6>Company Stats</h6>
-									<div class="widget-toggle">+</div>
-								</div>
-								<div class="widget-content">
-									<ul>
-										<li>
-											<span class="stats-title">Stat 1</span>
-											<span class="stats-complete">85%</span>
-											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-													<span class="sr-only">85% Complete</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span class="stats-title">Stat 2</span>
-											<span class="stats-complete">70%</span>
-											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-													<span class="sr-only">70% Complete</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span class="stats-title">Stat 3</span>
-											<span class="stats-complete">2%</span>
-											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-													<span class="sr-only">2% Complete</span>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
+							
 						</div>
 				
 					</div>
@@ -753,9 +726,15 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 									<a href="#" class="fa fa-caret-down"></a>
 									<a href="#" class="fa fa-times"></a>
 								</div>
-						
+							
 								<h2 class="panel-title">Reclamation</h2>
 							</header>
+							<br>							<div class="form-group">
+											<label class="col-sm-3 control-label"><span class="search"></span></label>
+											<div class="col-sm-9">
+												<input type="text" id="myInput" onkeyup="myFunction()" name="" class="form-control" title="Plase enter a numero." placeholder="searching" />
+											</div>
+										</div>
 							<div class="panel-body">
 								<div class="row">
 									
@@ -768,8 +747,8 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 											<th>Nom</th>
 											<th>Prenom</th>
 											<th>Description</th>
-											<th>Etat</th>
-											<th>Date</th>
+											<th onclick="sortTable(5)">Etat</th>
+											<th onclick="sortTable(6)">Date</th>
 											<th>Action</th>
 										</tr>
 									</thead>
@@ -786,15 +765,17 @@ $listereclamation=$reclamation1C->afficherReclamation1();
   										<td><?PHP echo $row['etat']; ?></td>
   										<td><?PHP echo $row['date']; ?></td>
 											<td class="supprimer">
-												<form method="POST" action="supprimerreclamation.php">
+												<center><form method="POST" action="supprimerreclamation.php">
   													<input type="submit" name="supprimer" value="supprimer" class="btn btn-danger btn-xs delete">
   													<input type="hidden" value="<?PHP echo $row['numero']; ?>" name="numero">
   													</form>
+  													<br>
   													<form method="POST" action="modifierreclamation.php">
-  												<input type="submit" name="modifier" value="modifier" class="btn btn-warning btn-xs update">
+  												<input type="submit" name="modifier" value="modifier" >
   													<input type="hidden" value="<?PHP echo $row['numero']; ?>" name="numero">
    													<input type="hidden" value="<?PHP echo $row['etat']; ?>" name="etat">
   													</form>
+  													</center>
   											</td>
 
 										</tr>
@@ -803,7 +784,20 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 										?>
 									</tbody>
 								</table>
+<br>
+<div><button type="button" class="btn btn-dark"><a href="imprimerReclamation.php">IMPRIMER</a></button>
+	
+</div>
 							</div>
+
+  													
+							<!--<footer class="panel-footer">
+										<div class="row">
+											<div class="col-sm-9 col-sm-offset-3">
+												<button class="btn btn-primary" onclick="sortTable()">Sort</button>
+											</div>
+										</div> 
+									</footer> -->
 						</section>
 					<!-- end: page -->
 				</section>
@@ -929,3 +923,83 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 		<script src="assets/javascripts/tables/examples.datatables.editable.js"></script>
 	</body>
 </html>
+
+<script>
+function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("datatable-editable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("datatable-editable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc"; 
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;      
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>

@@ -9,7 +9,7 @@ class Produit
 	private $Cathegory;
 	
 
-	 function __construct($reference,$nom,$prix,$description,$cathegory,$photo){
+	 function __construct($nom,$reference,$prix,$description,$cathegory,$photo){
 	 
 	 	
 

@@ -1,8 +1,4 @@
-<?PHP
-include "../core/produitCore.php";
-$produitC=new ProduitCore();
-$listeproduit=$produitC->afficherProduit();
-?>
+
 
 <!doctype html>
 <html class="fixed">
@@ -278,11 +274,12 @@ $listeproduit=$produitC->afficherProduit();
 						</div>
 					</div>
 				
+					
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
+									<li class="nav-active">
 										<a href="index.html">
 											<i class="fa fa-home" aria-hidden="true"></i>
 											<span>Dashboard</span>
@@ -298,7 +295,7 @@ $listeproduit=$produitC->afficherProduit();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-copy" aria-hidden="true"></i>
-											<span>Pages</span>
+											<span>Actuality</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -381,7 +378,7 @@ $listeproduit=$produitC->afficherProduit();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>UI Elements</span>
+											<span>Teams</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -494,7 +491,7 @@ $listeproduit=$produitC->afficherProduit();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Forms</span>
+											<span>Players</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -529,48 +526,29 @@ $listeproduit=$produitC->afficherProduit();
 											</li>
 										</ul>
 									</li>
-									<li class="nav-parent nav-expanded nav-active">
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>Tables</span>
+											<span>Store</span>
 										</a>
 										<ul class="nav nav-children">
-											<li class="nav-active">
-												<a href="tables-basic.html">
-													 Basic
+											<li>
+												<a href="forms-validation.html">
+													 Manager
 												</a>
 											</li>
 											<li>
-												<a href="tables-advanced.html">
-													 Advanced
+												<a href="affichage.php">
+													 Product
 												</a>
 											</li>
-											<li>
-												<a href="tables-responsive.html">
-													 Responsive
-												</a>
-											</li>
-											<li>
-												<a href="tables-editable.html">
-													 Editable
-												</a>
-											</li>
-											<li>
-												<a href="tables-ajax.html">
-													 Ajax
-												</a>
-											</li>
-											<li>
-												<a href="tables-pricing.html">
-													 Pricing
-												</a>
-											</li>
+
 										</ul>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-map-marker" aria-hidden="true"></i>
-											<span>Maps</span>
+											<span>Orders</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -593,7 +571,7 @@ $listeproduit=$produitC->afficherProduit();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Layouts</span>
+											<span>Carts</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -621,7 +599,7 @@ $listeproduit=$produitC->afficherProduit();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-align-left" aria-hidden="true"></i>
-											<span>Menu Levels</span>
+											<span>Clients</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -651,70 +629,50 @@ $listeproduit=$produitC->afficherProduit();
 											</li>
 										</ul>
 									</li>
-									<li>
-										<a href="http://themeforest.net/item/porto-responsive-html5-template/4106987?ref=Okler" target="_blank">
-											<i class="fa fa-external-link" aria-hidden="true"></i>
-											<span>Front-End <em class="not-included">(Not Included)</em></span>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-columns" aria-hidden="true"></i>
+											<span>Tournaments</span>
 										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="#">
+													 ayoub
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Boxed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Menu Collapsed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Scroll
+												</a>
+											</li>
+										</ul>
 									</li>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-columns" aria-hidden="true"></i>
+											<span>Customer service</span>
+										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="affichageRec.php">
+													 Reclamation
+												</a>
+											</li>
+										</ul>
+									</li>
+									
 								</ul>
 							</nav>
-				
-							<hr class="separator" />
-				
-							<div class="sidebar-widget widget-tasks">
-								<div class="widget-header">
-									<h6>Projects</h6>
-									<div class="widget-toggle">+</div>
-								</div>
-								<div class="widget-content">
-									<ul class="list-unstyled m-none">
-										<li><a href="#">Porto HTML5 Template</a></li>
-										<li><a href="#">Tucson Template</a></li>
-										<li><a href="#">Porto Admin</a></li>
-									</ul>
-								</div>
-							</div>
-				
-							<hr class="separator" />
-				
-							<div class="sidebar-widget widget-stats">
-								<div class="widget-header">
-									<h6>Company Stats</h6>
-									<div class="widget-toggle">+</div>
-								</div>
-								<div class="widget-content">
-									<ul>
-										<li>
-											<span class="stats-title">Stat 1</span>
-											<span class="stats-complete">85%</span>
-											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-													<span class="sr-only">85% Complete</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span class="stats-title">Stat 2</span>
-											<span class="stats-complete">70%</span>
-											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-													<span class="sr-only">70% Complete</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<span class="stats-title">Stat 3</span>
-											<span class="stats-complete">2%</span>
-											<div class="progress">
-												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-													<span class="sr-only">2% Complete</span>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
 						</div>
 				
 					</div>
@@ -743,19 +701,25 @@ $listeproduit=$produitC->afficherProduit();
 
 					<!-- start: page -->
 						<div class="row">
-							<div class="col-md-6">
-								<section class="panel">
+							<div class="col-md-6" style="width: 100%;">
+								<section style="width: 100%;" class="panel">
 									<header class="panel-heading">
 										<div class="panel-actions">
 											<a href="#" class="fa fa-caret-down"></a>
 											<a href="#" class="fa fa-times"></a>
 										</div>
-						
+										
 										<h2 class="panel-title">Product's Table</h2>
 									</header>
+									<br>							<div class="form-group">
+											<label class="col-sm-3 control-label"><span class="search"></span></label>
+											<div class="col-sm-9">
+												<input type="text" id="myInput" onkeyup="myFunction()" name="" class="form-control" title="Plase enter a numero." placeholder="searching" />
+											</div>
+										</div>
 									<div class="panel-body">
 										<div class="table-responsive">
-											<table class="table mb-none">
+											<table class="table mb-none" id="myTable">
 												<thead>
 													<tr>
 														<th>#</th>
@@ -768,21 +732,13 @@ $listeproduit=$produitC->afficherProduit();
 													</tr>
 												</thead>
 												<tbody>
+													
 													<?PHP
-														foreach($listeproduit as $row){
-  														?>
-													<tr>
-														<td>1</td>
- 														<td><?PHP echo $row['nom']; ?></td>
-														<td><?PHP echo $row['reference']; ?></td>
- 														<td><?PHP echo $row['prix']; ?></td>
-  														<td><?PHP echo $row['description']; ?></td>
-  														<td><?PHP echo $row['cathegory']; ?></td>
-  														<td><?PHP echo $row['photo']; ?></td>
-													</tr>
-													  <?PHP
-													}
+															include "../core/produitCore.php";
+															$produitC=new ProduitCore();
+															$listeproduit=$produitC->afficherProduit();
 													?>
+												
 													</tr>
 												</tbody>
 											</table>
@@ -891,3 +847,26 @@ $listeproduit=$produitC->afficherProduit();
 
 	</body>
 </html>
+<script>
+function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>

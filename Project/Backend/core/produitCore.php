@@ -38,11 +38,23 @@ class ProduitCore
 	function afficherProduit()
 	{
 		
-		$sql=" SELECT * From produit ";
+		$sql=" SELECT * From produit";
 		$db = config::getConnexion();
 		try{
-		$liste=$db->query($sql);
-		return $liste;
+		$lol=$db->prepare($sql);
+		$lol->execute();
+		$i=1;
+		foreach ($db->query($sql) as $row) {
+			echo'<tr>
+														<td>'.$i++.'</td>
+ 														<td>'.$row['nom'].'</td>
+														<td>'.$row['reference'].'</td>
+ 														<td>'.$row['prix'].'</td>
+  														<td>'.$row['description'].'</td>
+  														<td>'.$row['cathegory'].'</td>
+  														<td><img style="width:40px;heigth:100px;"src="data:image/jpeg;base64,'.base64_encode(stripslashes($row['photo'])).'"></td>
+													</tr>';
+		}
 		}
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
