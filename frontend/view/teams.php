@@ -13,9 +13,6 @@ foreach($list1 as $row){
                              
                              
                                   }  
-
-
-//var_dump($listeEmployes->fetchAll());
 ?>
 <!DOCTYPE html>
 <!--
@@ -516,7 +513,7 @@ foreach($list1 as $row){
                 <div class="nk-team-cont">
                     <h3 class="h5 mb-20"><span class="text-main-1">Team:</span> <?PHP echo $row['nom']; ?></h3>
                     <h4 class="h6 mb-5">Members:</h4>
-                     <a href="tournaments-teammate.html"><?PHP echo $row['names']; ?>
+                     <a href="teamplayers.php?nom=<?PHP echo $row['nom']; ?>"><?PHP echo $row['names']; ?>
                      <br></br>
                      <h4 class="h6 mb-5">Descreption:</h4>
                      <a><?PHP echo $row['description']; ?>
@@ -852,17 +849,17 @@ foreach($list1 as $row){
                 <div class="nk-widget">
                     <h4 class="nk-widget-title"><span class="text-main-1">Contact</span> With Us</h4>
                     <div class="nk-widget-content">
-                        <form action="php/ajax-contact-form.php" class="nk-form nk-form-ajax">
+                        <form action="addfeed.php"  method="POST">
                             <div class="row vertical-gap sm-gap">
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control required" name="email" placeholder="Email *">
+                                    <input type="email" class="form-control required" name="mail" placeholder="Email *">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control required" name="name" placeholder="Name *">
+                                    <input type="text" class="form-control required" name="nom" placeholder="Name *">
                                 </div>
                             </div>
                             <div class="nk-gap"></div>
-                            <textarea class="form-control required" name="message" rows="5" placeholder="Message *"></textarea>
+                            <textarea class="form-control required" name="desc" rows="5" placeholder="Message *"></textarea>
                             <div class="nk-gap-1"></div>
                             <button class="nk-btn nk-btn-rounded nk-btn-color-white">
                                 <span>Send</span>

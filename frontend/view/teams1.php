@@ -1,7 +1,7 @@
 <?PHP
-include "../core/playerC.php";
-$playerC=new playerC();
-$list=$playerC->showplayers();
+include "../core/teamC.php";
+$team1C=new teamC();
+$list=$team1C->showteams();
 
 //var_dump($listeEmployes->fetchAll());
 ?>
@@ -22,7 +22,7 @@ $list=$playerC->showplayers();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>GoodGames | Faker</title>
+    <title>GoodGames | Teams</title>
 
     <meta name="description" content="GoodGames - Bootstrap template for communities and games store">
     <meta name="keywords" content="game, gaming, template, HTML template, responsive, Bootstrap, premium">
@@ -341,13 +341,13 @@ $list=$playerC->showplayers();
                 
             </a>
         </li>
-        <li>
+        <li class="active">
             <a href="tournaments-teams.html">
                 Teams
                 
             </a>
         </li>
-        <li class="active">
+        <li>
             <a href="tournaments-teammate.html">
                 Teammate
                 
@@ -468,12 +468,7 @@ $list=$playerC->showplayers();
         
         <li><span class="fa fa-angle-right"></span></li>
         
-        <li><a href="tournaments-teams.html">Teams</a></li>
-        
-        
-        <li><span class="fa fa-angle-right"></span></li>
-        
-        <li><span>All players</span></li>
+        <li><span>Teams</span></li>
         
     </ul>
 </div>
@@ -484,295 +479,63 @@ $list=$playerC->showplayers();
 
         
 <div class="container">
+    
     <div class="row vertical-gap">
-
+       
 
         <div class="col-lg-8">
-<?PHP
+             <?PHP
                                             foreach($list as $row){
                                         ?>
 
-            <!-- START: Teammate Card -->
-            <div class="nk-teammate-card">
-                <div class="nk-teammate-card-photo">
+            <!-- START: Teams -->
+
+            <div class="nk-team">
+                <div class="nk-team-logo">
                     <?PHP echo'
                     <img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" height="200" width="200" class="img-thumnail" />';?>  
                 </div>
+                <div class="nk-team-cont">
+                    <h3 class="h5 mb-20"><span class="text-main-1">Team:</span> <?PHP echo $row['nom']; ?></h3>
+                    <h4 class="h6 mb-5">Members:</h4>
+                     <a href="tournaments-teammate.html"><?PHP echo $row['names']; ?>
+                     <br></br>
+                     <h4 class="h6 mb-5">Descreption:</h4>
+                     <a><?PHP echo $row['description']; ?>
+                    </a>
 
-                <div class="nk-teammate-card-info">
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <h2 class="h3 mb-20"><span class="text-main-1"><?PHP echo $row['clan']; ?></span></h2>
-                            </td>
-                            <td>
-                                <table>
-                                    <tbody>
-                                    <tr>
-                                        <td><strong class="h5">Name:</strong>&nbsp;&nbsp;&nbsp;</td>
-                                        <td><strong class="h5"><?PHP echo $row['name']; ?></strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="h5">Nickname:</strong>&nbsp;&nbsp;&nbsp;</td>
-                                        <td><strong class="h5"><?PHP echo $row['nick']; ?></strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong class="h5">Position:</strong>&nbsp;&nbsp;&nbsp;</td>
-                                        <td><strong class="h5"><?PHP echo $row['role']; ?></strong></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong class="h3"><?PHP echo $row['kda']; ?></strong>
-                            </td>
-                            <td>
-                                <strong class="h5">KDA Ration</strong>
-                                <div></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong class="h3"><?PHP echo $row['kills']; ?>%</strong>
-                            </td>
-                            <td>
-                                <strong class="h5">KILL PARTICIPATION</strong>
-                                <div></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                                <strong class="h5">Biography</strong>
-                                <div><?PHP echo $row['bio']; ?></div>
-                            </td>
-                        </tr>
+                    <?PHP if(($row['game'])==('Conter Strike')){ ?>
+                    <div class="nk-team-photo" style="background-image: url('assets/images/cs.png');">
+                    </div>
 
-                        </tbody>
-                    </table>
+                    <?PHP   } ?>
+                    <?PHP if(($row['game'])==('Dota 2')){ ?>
+                    <div class="nk-team-photo" style="background-image: url('assets/images/dota.jpg');">
+                   </div>
 
+                    <?PHP   } ?>
+                    <?PHP if(($row['game'])==('League of legends')){ ?>
+                    <div class="nk-team-photo" style="background-image: url('assets/images/lol.png');">
+                    </div>
+                    <?PHP   } ?>
                 </div>
-                
+                  </div>
+                  <div class="nk-gap-2"></div>
+                   <?PHP
+            }
+                ?>
             </div>
-<div class="nk-gap-2"></div>
-            <?PHP   } ?>
-            
+     
 
-            <!-- END: Teammate Card -->
+        
 
-            <!-- START: Biography -->
-            <div class="nk-gap-3"></div>
-            
-            <!-- END: Biography -->
+            <!-- END: Teams -->
 
-            <!-- START: Latest Matches -->
-            <div class="nk-gap-2"></div>
-            <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Latest</span> Matches</span></h3>
-            <div class="nk-gap"></div>
-            <div class="nk-match">
-                <div class="nk-match-team-left">
-                    <a href="#">
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-1.jpg" alt="">
-                        </span>
-                        <span class="nk-match-team-name">
-                            SK Telecom T1
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-status">
-                    <a href="#">
-                        <span class="nk-match-status-vs">VS</span>
-                        <span class="nk-match-status-date">Apr 28, 2018 8:00 pm</span>
-                        <span class="nk-match-score bg-danger">
-                            2 : 17
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-team-right">
-                    <a href="#">
-                        <span class="nk-match-team-name">
-                            Cloud 9
-                        </span>
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-2.jpg" alt="">
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="nk-match">
-                <div class="nk-match-team-left">
-                    <a href="#">
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-3.jpg" alt="">
-                        </span>
-                        <span class="nk-match-team-name">
-                            Counted logic gaming
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-status">
-                    <a href="#">
-                        <span class="nk-match-status-vs">VS</span>
-                        <span class="nk-match-status-date">Apr 15, 2018 9:00 pm</span>
-                        <span class="nk-match-score bg-success">
-                            28 : 19
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-team-right">
-                    <a href="#">
-                        <span class="nk-match-team-name">
-                            SK Telecom T1
-                        </span>
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-1.jpg" alt="">
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="nk-match">
-                <div class="nk-match-team-left">
-                    <a href="#">
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-4.jpg" alt="">
-                        </span>
-                        <span class="nk-match-team-name">
-                            Team SoloMid
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-status">
-                    <a href="#">
-                        <span class="nk-match-status-vs">VS</span>
-                        <span class="nk-match-status-date">Apr 28, 2018 8:00 pm</span>
-                        <span class="nk-match-score bg-dark-1">
-                            13 : 13
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-team-right">
-                    <a href="#">
-                        <span class="nk-match-team-name">
-                            SK Telecom T1
-                        </span>
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-1.jpg" alt="">
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <!-- END: Latest Matches -->
-
-            <!-- START: Upcoming Matches -->
-            <div class="nk-gap-3"></div>
-            <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Upcoming</span> Matches</span></h3>
-            <div class="nk-gap"></div>
-            <div class="nk-match">
-                <div class="nk-match-team-left">
-                    <a href="#">
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-1.jpg" alt="">
-                        </span>
-                        <span class="nk-match-team-name">
-                            SK Telecom T1
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-status">
-                    <a href="#">
-                        <span class="nk-match-status-vs">VS</span>
-                        <span class="nk-match-status-date">Apr 28, 2018 8:00 pm</span>
-                        <span class="nk-match-score">
-                            Upcoming
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-team-right">
-                    <a href="#">
-                        <span class="nk-match-team-name">
-                            Cloud 9
-                        </span>
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-2.jpg" alt="">
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="nk-match">
-                <div class="nk-match-team-left">
-                    <a href="#">
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-3.jpg" alt="">
-                        </span>
-                        <span class="nk-match-team-name">
-                            Counted logic gaming
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-status">
-                    <a href="#">
-                        <span class="nk-match-status-vs">VS</span>
-                        <span class="nk-match-status-date">Apr 15, 2018 9:00 pm</span>
-                        <span class="nk-match-score">
-                            Upcoming
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-team-right">
-                    <a href="#">
-                        <span class="nk-match-team-name">
-                            SK Telecom T1
-                        </span>
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-1.jpg" alt="">
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="nk-match">
-                <div class="nk-match-team-left">
-                    <a href="#">
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-4.jpg" alt="">
-                        </span>
-                        <span class="nk-match-team-name">
-                            Team SoloMid
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-status">
-                    <a href="#">
-                        <span class="nk-match-status-vs">VS</span>
-                        <span class="nk-match-status-date">Apr 28, 2018 8:00 pm</span>
-                        <span class="nk-match-score">
-                            Upcoming
-                        </span>
-                    </a>
-                </div>
-                <div class="nk-match-team-right">
-                    <a href="#">
-                        <span class="nk-match-team-name">
-                            SK Telecom T1
-                        </span>
-                        <span class="nk-match-team-logo">
-                            <img src="assets/images/team-1.jpg" alt="">
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <!-- END: Upcoming Matches -->
-
-        </div>
+    
+           
         <div class="col-lg-4">
+            
+             
             <!--
                 START: Sidebar
 

@@ -1,7 +1,10 @@
 <?PHP
 include "../core/playerC.php";
+
 $playerC=new playerC();
-$list=$playerC->showplayers();
+$ok=$_GET['nom'];
+$list=$playerC->afficherpc($ok);
+
 
 //var_dump($listeEmployes->fetchAll());
 ?>
@@ -490,6 +493,7 @@ $list=$playerC->showplayers();
         <div class="col-lg-8">
 <?PHP
                                             foreach($list as $row){
+
                                         ?>
 
             <!-- START: Teammate Card -->
