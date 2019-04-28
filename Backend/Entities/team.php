@@ -9,8 +9,9 @@ class team
       private $description;
       private $names;
       private $image;
+      private $winr;
 
-  function __construct($nom,$game,$nbr,$mail,$description,$names,$image)
+  function __construct($nom,$game,$nbr,$mail,$description,$names,$image,$winr)
   {
     $this->nom = $nom;
     $this->game = $game;
@@ -19,6 +20,7 @@ class team
     $this->description = $description;
     $this->names = $names;
     $this->image = $image;
+    $this->winr = $winr;
   }
   function getnom (){return $this->nom;}
   function getgame (){return $this->game;}
@@ -27,6 +29,7 @@ class team
   function getdescription (){return $this->description;}
   function getnames (){return $this->names;}
   function getimage (){return $this->image;}
+    function getwinr (){return $this->winr;}
 
 
   function setnom($nom){
