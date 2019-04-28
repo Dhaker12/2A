@@ -420,6 +420,11 @@ $list=$team1C->showplayers();
 													 Feedback
 												</a>
 											</li>
+											<li >
+												<a href="stats.php">
+													 Stats
+												</a>
+											</li>
 										</ul>
 									</li>
 									<li class="nav-parent">
@@ -731,7 +736,7 @@ $list=$team1C->showplayers();
 										</div>
 										
 						<div class="panel-body">
-										<form class="form-horizontal form-bordered">
+										
 						
 											<div class="form-group">
 												<label class="col-md-3 control-label">Number of players</label>
@@ -742,7 +747,27 @@ $list=$team1C->showplayers();
 													<p class="output">The current <code>value</code> is: <b>5</b></p>
 												</div>
 											</div>
-										</form>
+
+											<label class="col-md-3 control-label">Alternative</label>
+												<div class="col-md-6">
+													<div data-plugin-spinner data-plugin-options='{ "value":50, "step": 1, "min": 0, "max": 100 }'>
+														<div class="input-group">
+															<div class="spinner-buttons input-group-btn">
+																<button type="button" class="btn btn-default spinner-up">
+																	<i class="fa fa-plus"></i>
+																</button>
+															</div>
+															<input type="text" class="spinner-input form-control" maxlength="3" value="50" readonly name="winr" >
+															<div class="spinner-buttons input-group-btn">
+																<button type="button" class="btn btn-default spinner-down">
+																	<i class="fa fa-minus"></i>
+																</button>
+															</div>
+														</div>
+													</div>
+													
+												</div>
+										
 									</div>
 						
 										<div class="form-group">
@@ -796,8 +821,8 @@ $list=$team1C->showplayers();
 										
 									<div class="panel-body">
 										<div class="row form-group">
-                                                                    <div class="col col-md-3"><label for="file-input" class=" form-control-label">File input</label></div>
-                                                                    <div class="col-12 col-md-9"><input type="file" id="file-input" name="image" class="form-control-file" ></div>
+                                                                    <div class="col col-md-3"><label for="file-input" class=" form-control-label"></label></div>
+                                                                    <div class="col-12 col-md-9"><input type="hidden" id="file-input" name="image" class="form-control-file"  ></div>
                                          </div>
 									</div>
 									
@@ -813,6 +838,7 @@ $list=$team1C->showplayers();
 									</footer>
 
 								</section>
+								
 							</form>
 						</div>
 						</div>

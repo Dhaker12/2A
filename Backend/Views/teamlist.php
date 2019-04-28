@@ -1,8 +1,7 @@
-
 <?PHP
-include "../core/feedC.php";
-$feedC=new feedC();
-$list=$feedC->afficherfeed();
+include "../core/teamC.php";
+$team1C=new teamC();
+$list=$team1C->showplayers();
 
 //var_dump($listeEmployes->fetchAll());
 ?>
@@ -10,10 +9,9 @@ $list=$feedC->afficherfeed();
 	<head>
 
 		<!-- Basic -->
-		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Advanced Forms | Okler Themes | Porto-Admin</title>
+		<title>Editable Tables | Okler Themes | Porto-Admin</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -31,19 +29,8 @@ $list=$feedC->afficherfeed();
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
 
 		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
 		<link rel="stylesheet" href="assets/vendor/select2/select2.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" />
-		<link rel="stylesheet" href="assets/vendor/dropzone/css/basic.css" />
-		<link rel="stylesheet" href="assets/vendor/dropzone/css/dropzone.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-markdown/css/bootstrap-markdown.min.css" />
-		<link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
-		<link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
-		<link rel="stylesheet" href="assets/vendor/codemirror/lib/codemirror.css" />
-		<link rel="stylesheet" href="assets/vendor/codemirror/theme/monokai.css" />
+		<link rel="stylesheet" href="assets/vendor/jquery-datatables-bs3/assets/css/datatables.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -55,31 +42,8 @@ $list=$feedC->afficherfeed();
 		<link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
 
 		<!-- Head Libs -->
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-	    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
 
-<style>
-  body
-  {
-   margin:0;
-   padding:0;
-   background-color:#f1f1f1;
-  }
-  .box
-  {
-   width:1270px;
-   padding:20px;
-   background-color:#fff;
-   border:1px solid #ccc;
-   border-radius:5px;
-   margin-top:25px;
-   box-sizing:border-box;
-  }
-  </style>
 
 	</head>
 	<body>
@@ -430,24 +394,14 @@ $list=$feedC->afficherfeed();
 													 Add team
 												</a>
 											</li>
-											<li>
+											<li class="nav-active">
 												<a href="teamlist.html" >
 													 My teams
 												</a>
 											</li>
-											<li >
-												<a href="twitch.php">
-													 Twitch channel
-												</a>
-											</li>
-											<li class="nav-active">
-												<a href="Feedback.php">
-													 Feedback
-												</a>
-											</li>
-											<li >
-												<a href="stats.php">
-													 Stats
+											<li>
+												<a href="forms-validation.html">
+													 Edit teams
 												</a>
 											</li>
 										</ul>
@@ -459,18 +413,33 @@ $list=$feedC->afficherfeed();
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="addplayer.html">
-													 Add player
+												<a href="forms-basic.html">
+													 Basic
 												</a>
 											</li>
 											<li>
-												<a href="myplayers.html">
-													 My players
+												<a href="forms-advanced.html">
+													 Advanced
 												</a>
 											</li>
 											<li>
 												<a href="forms-validation.html">
-													 edit players
+													 Validation
+												</a>
+											</li>
+											<li>
+												<a href="forms-layouts.html">
+													 Layouts
+												</a>
+											</li>
+											<li>
+												<a href="forms-wizard.html">
+													 Wizard
+												</a>
+											</li>
+											<li>
+												<a href="forms-code-editor.html">
+													 Code Editor
 												</a>
 											</li>
 										</ul>
@@ -717,126 +686,92 @@ $list=$feedC->afficherfeed();
 					</header>
 
 					<!-- start: page -->
-
-			<div class="row">
-						<div class="col-xs-12">
-							<form  action="deletefeed.php" class="form-horizontal" method="POST">
-								<section class="panel">
-									<header class="panel-heading">
-										<div class="panel-actions">
-											<a href="#" class="fa fa-caret-down"></a>
-											<a href="#" class="fa fa-times"></a>
+						<section class="panel">
+							
+							<header class="panel-heading">
+								<div class="panel-actions">
+									<a href="#" class="fa fa-caret-down"></a>
+									<a href="#" class="fa fa-times"></a>
+								</div>
+						
+								<h2 class="panel-title">Default</h2>
+							</header>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="mb-md">
+											<button id="addToTable" class="btn btn-primary">Add <i class="fa fa-plus"></i></button>
 										</div>
-
-										<h2 class="panel-title">Add Team</h2>
-										<p class="panel-subtitle">
-											you need to fill these.
-
-										</p>
-
-											
-									</header>
-									<footer class="panel-footer">
+									</div>
+								</div>
+								<table class="table table-bordered table-striped mb-none" id="datatable-editable" method="POST">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>members</th>
+											<th>contact</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									
+									<tbody>
 										<?PHP
 											foreach($list as $row){
 										?>
-										<div class="col-md-12">
-											<section class="panel-group mb-xlg">
-											<div class="widget-twitter-profile">
-											
-												<div class="profile-info">
-													<div class="profile-picture">
-														<img src="assets/images/!happy-face.png" alt="">
-													</div>
-													<div class="profile-account">
-														<h3 class="name text-semibold"><?PHP echo $row['nom']; ?></h3>
-														<a href="#" class="account"><?PHP echo $row['mail']; ?></a>
-														<input type="hidden" name="mail" value="<?PHP echo $row['mail']; ?>">
-													</div>
-													
-												</div>
-												<div class="profile-quote">
-													<blockquote>
-														<p>
-															<?PHP echo $row['bio']; ?>
-														</p>
-													</blockquote>
-													<div class="quote-footer">
-													
-													
-														<button id="delete" type="submit" class="mb-xs mt-xs mr-xs btn btn-danger" name="delete" value="<?PHP echo $row['nom']; ?>" >Delete</button>
+										<tr class="gradeA">
+											<td><?PHP echo $row['nick']; ?> </td>
+											<td><?PHP echo $row['nick']; ?></td>
+											<td><?PHP echo $row['nick']; ?></td>
+											<td class="actions">
+
+												<form method="POST" action="deleteteam.php">
 														
+														
+												
+												<a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
+												<a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
+												<a href="#" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+												<a href="#" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+												</form>
+											</td>
+										</tr>
+		<div id="dialog" class="modal-block mfp-hide">
+			
+			<section class="panel">
+				<header class="panel-heading">
+					<h2 class="panel-title">Are you sure?</h2>
+				</header>
+				<div class="panel-body">
+					<div class="modal-wrapper">
+						<div class="modal-text">
+							<p>Are you sure that you want to delete this row?</p>
+						</div>
+					</div>
+				</div>
+				<footer class="panel-footer">
+					<div class="row">
+						<div class="col-md-12 text-right">
+							<button id="dialogConfirm" class="btn btn-primary" >Confirm <input type="hidden" value="<?PHP echo $row['nom']; ?>" name="nom"></button>
 
-													<a class="mb-xs mt-xs mr-xs btn btn-success" name="reply" value="<?PHP echo $row['mail']; ?>"data-target="#myModal"data-toggle="modal">Reply </a>
-
-
-
-
-
-
-
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-
-<div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        	<button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">
-                                Quick reply
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            
-
-                               
-                                <div class="form-group">
-                                    <label> Message:</label>
-                                    <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Your Message Here" maxlength="6000" rows="7" ></textarea>
-                                </div>
-                                <br></br>
-                                <button type="submit" class="btn btn-lg btn-success btn-block" >Send &rarr;</button>
-                         
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
+							<button id="dialogCancel" class="btn btn-default">Cancel</button>
+						</div>
+					</div>
+				</footer>
+			</section>
+		
+		</div>
 <?PHP
-										}
-										?>
-										<div class="text-right mr-lg">
-								
-								<a href="printf.php" target="_blank" class="btn btn-primary ml-sm"><i class="fa fa-print"></i> Print</a>
+}
+?>
+									</tbody>
+									
+								</table>
 							</div>
-									</footer>
-
-
-								</section>
-							</form>
-						</div>
-						</div>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-
+						</section>
+					
 					<!-- end: page -->
 				</section>
 			</div>
-						
-					
-					<!-- end: page -->
-			
 
 			<aside id="sidebar-right" class="sidebar-right">
 				<div class="nano">
@@ -907,28 +842,7 @@ $list=$feedC->afficherfeed();
 			</aside>
 		</section>
 
-		<div id="dialog" class="modal-block mfp-hide">
-			<section class="panel">
-				<header class="panel-heading">
-					<h2 class="panel-title">Are you sure?</h2>
-				</header>
-				<div class="panel-body">
-					<div class="modal-wrapper">
-						<div class="modal-text">
-							<p>Are you sure that you want to delete this row?</p>
-						</div>
-					</div>
-				</div>
-				<footer class="panel-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button id="dialogConfirm" class="btn btn-primary">Confirm</button>
-							<button id="dialogCancel" class="btn btn-default">Cancel</button>
-						</div>
-					</div>
-				</footer>
-			</section>
-		</div>
+
 
 		<!-- Vendor -->
 		<script src="assets/vendor/jquery/jquery.js"></script>

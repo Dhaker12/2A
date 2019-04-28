@@ -1,11 +1,4 @@
 
-<?PHP
-include "../core/feedC.php";
-$feedC=new feedC();
-$list=$feedC->afficherfeed();
-
-//var_dump($listeEmployes->fetchAll());
-?>
 <html class="fixed">
 	<head>
 
@@ -419,7 +412,7 @@ $list=$feedC->afficherfeed();
 											</li>
 										</ul>
 									</li>
-									<li class="nav-parent nav-expanded nav-active">
+									<li class="nav-parent" >
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>Teams</span>
@@ -435,12 +428,12 @@ $list=$feedC->afficherfeed();
 													 My teams
 												</a>
 											</li>
-											<li >
+											<li>
 												<a href="twitch.php">
 													 Twitch channel
 												</a>
 											</li>
-											<li class="nav-active">
+											<li>
 												<a href="Feedback.php">
 													 Feedback
 												</a>
@@ -452,7 +445,7 @@ $list=$feedC->afficherfeed();
 											</li>
 										</ul>
 									</li>
-									<li class="nav-parent">
+									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
 											<span>Players</span>
@@ -463,7 +456,7 @@ $list=$feedC->afficherfeed();
 													 Add player
 												</a>
 											</li>
-											<li>
+											<li class="nav-active">
 												<a href="myplayers.html">
 													 My players
 												</a>
@@ -717,126 +710,147 @@ $list=$feedC->afficherfeed();
 					</header>
 
 					<!-- start: page -->
+						<section class="panel">
+							<header class="panel-heading">
+								<div class="panel-actions">
+									<a href="#" class="fa fa-caret-down"></a>
+									<a href="#" class="fa fa-times"></a>
+								</div>
+						
+								<h2 class="panel-title">Default</h2>
+							</header>
 
-			<div class="row">
-						<div class="col-xs-12">
-							<form  action="deletefeed.php" class="form-horizontal" method="POST">
-								<section class="panel">
-									<header class="panel-heading">
-										<div class="panel-actions">
-											<a href="#" class="fa fa-caret-down"></a>
-											<a href="#" class="fa fa-times"></a>
-										</div>
+							<div class="table-responsive">
+   <br />
+    <div align="right">
+     <button type="button" name="add" id="add" class="btn btn-info">Add</button>
+    </div>
+    <br />
+    <div id="alert_message"></div>
+    <table id="user_data" class="table table-bordered table-striped">
+     <thead>
+      <tr>
+       <th>Names</th>
+       <th>kda ratio</th>
+       <th>kills participation %</th>
+       <th>team</th>
+       <th></th>
+      </tr>
+     </thead>
+    </table>
+   </div>
 
-										<h2 class="panel-title">Add Team</h2>
-										<p class="panel-subtitle">
-											you need to fill these.
+</html>
 
-										</p>
+<script type="text/javascript" language="javascript" >
+ $(document).ready(function(){
+  
+  fetch_data();
 
-											
-									</header>
-									<footer class="panel-footer">
-										<?PHP
-											foreach($list as $row){
-										?>
-										<div class="col-md-12">
-											<section class="panel-group mb-xlg">
-											<div class="widget-twitter-profile">
-											
-												<div class="profile-info">
-													<div class="profile-picture">
-														<img src="assets/images/!happy-face.png" alt="">
-													</div>
-													<div class="profile-account">
-														<h3 class="name text-semibold"><?PHP echo $row['nom']; ?></h3>
-														<a href="#" class="account"><?PHP echo $row['mail']; ?></a>
-														<input type="hidden" name="mail" value="<?PHP echo $row['mail']; ?>">
-													</div>
-													
-												</div>
-												<div class="profile-quote">
-													<blockquote>
-														<p>
-															<?PHP echo $row['bio']; ?>
-														</p>
-													</blockquote>
-													<div class="quote-footer">
-													
-													
-														<button id="delete" type="submit" class="mb-xs mt-xs mr-xs btn btn-danger" name="delete" value="<?PHP echo $row['nom']; ?>" >Delete</button>
-														
+  function fetch_data()
+  {
+   var dataTable = $('#user_data').DataTable({
+    "processing" : true,
+    "serverSide" : true,
+    "order" : [],
+    "ajax" : {
+     url:"fetchp.php",
+     type:"POST"
+    }
+   });
+  }
+  
+  function update_data(id, column_name, value)
+  {
+   $.ajax({
+    url:"updatep.php",
+    method:"POST",
+    data:{id:id, column_name:column_name, value:value},
+    success:function(data)
+    {
+     $('#alert_message').html('<div class="alert alert-success">'+data+'</div>');
+     $('#user_data').DataTable().destroy();
+     fetch_data();
+    }
+   });
+   setInterval(function(){
+    $('#alert_message').html('');
+   }, 5000);
+  }
 
-													<a class="mb-xs mt-xs mr-xs btn btn-success" name="reply" value="<?PHP echo $row['mail']; ?>"data-target="#myModal"data-toggle="modal">Reply </a>
-
-
-
-
-
-
-
-													</div>
-												</div>
-											</div>
-										</section>
-									</div>
-
-<div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        	<button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">
-                                Quick reply
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            
-
-                               
-                                <div class="form-group">
-                                    <label> Message:</label>
-                                    <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Your Message Here" maxlength="6000" rows="7" ></textarea>
-                                </div>
-                                <br></br>
-                                <button type="submit" class="btn btn-lg btn-success btn-block" >Send &rarr;</button>
-                         
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-<?PHP
-										}
-										?>
-										<div class="text-right mr-lg">
+  $(document).on('blur', '.update', function(){
+   var id = $(this).data("id");
+   var column_name = $(this).data("column");
+   var value = $(this).text();
+   update_data(id, column_name, value);
+  });
+  
+  $('#add').click(function(){
+   var html = '<tr>';
+   html += '<td contenteditable id="data1"></td>';
+   html += '<td contenteditable id="data2"></td>';
+   html += '<td contenteditable id="data3"></td>';
+   html += '<td contenteditable id="data4"></td>';
+   html += '<td><button type="button" name="insert" id="insert" class="btn btn-success btn-xs">Insert</button></td>';
+   html += '</tr>';
+   $('#user_data tbody').prepend(html);
+  });
+  
+  $(document).on('click', '#insert', function(){
+   var nick = $('#data1').text();
+   var kda = $('#data2').text();
+   var kills = $('#data3').text();
+   var clan = $('#data4').text();
+   if(nick != '' && kda != '' && kills != ''&& clan != '')
+   {
+    $.ajax({
+     url:"insertp.php",
+     method:"POST",
+     data:{nick:nick, kda:kda, kills:kills ,clan:clan},
+     success:function(data)
+     {
+      $('#alert_message').html('<div class="alert alert-success">'+data+'</div>');
+      $('#user_data').DataTable().destroy();
+      fetch_data();
+     }
+    });
+    setInterval(function(){
+     $('#alert_message').html('');
+    }, 5000);
+   }
+   else
+   {
+    alert("Both Fields is required");
+   }
+  });
+  
+  $(document).on('click', '.delete', function(){
+   var id = $(this).attr("id");
+   if(confirm("Are you sure you want to remove this?"))
+   {
+    $.ajax({
+     url:"deletep.php",
+     method:"POST",
+     data:{id:id},
+     success:function(data){
+      $('#alert_message').html('<div class="alert alert-success">'+data+'</div>');
+      $('#user_data').DataTable().destroy();
+      fetch_data();
+     }
+    });
+    setInterval(function(){
+     $('#alert_message').html('');
+    }, 5000);
+   }
+  });
+ });
+</script>
 								
-								<a href="printf.php" target="_blank" class="btn btn-primary ml-sm"><i class="fa fa-print"></i> Print</a>
-							</div>
-									</footer>
-
-
-								</section>
-							</form>
-						</div>
-						</div>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-
+					     </section>
+					
 					<!-- end: page -->
 				</section>
 			</div>
-						
-					
-					<!-- end: page -->
-			
 
 			<aside id="sidebar-right" class="sidebar-right">
 				<div class="nano">

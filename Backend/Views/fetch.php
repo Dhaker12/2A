@@ -1,7 +1,7 @@
 <?php
 //fetch.php
 $connect = mysqli_connect("localhost", "root", "azizsahnoun5", "test");
-$columns = array('nom', 'names','mail');
+$columns = array('nom', 'names','winr');
 
 $query = "SELECT * FROM teams ";
 
@@ -41,7 +41,7 @@ while($row = mysqli_fetch_array($result))
  $sub_array = array();
  $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="nom">' . $row["nom"] . '</div>';
  $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="names">' . $row["names"] . '</div>';
- $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="mail">' . $row["mail"] . '</div>';
+ $sub_array[] = '<div contenteditable class="update" data-id="'.$row["id"].'" data-column="winr">' . $row["winr"] . '</div>';
  $sub_array[] = '<button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row["id"].'">Delete</button>';
  $data[] = $sub_array;
 }

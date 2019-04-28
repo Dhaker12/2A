@@ -1,11 +1,4 @@
 
-<?PHP
-include "../core/feedC.php";
-$feedC=new feedC();
-$list=$feedC->afficherfeed();
-
-//var_dump($listeEmployes->fetchAll());
-?>
 <html class="fixed">
 	<head>
 
@@ -435,12 +428,12 @@ $list=$feedC->afficherfeed();
 													 My teams
 												</a>
 											</li>
-											<li >
+											<li class="nav-active">
 												<a href="twitch.php">
 													 Twitch channel
 												</a>
 											</li>
-											<li class="nav-active">
+											<li>
 												<a href="Feedback.php">
 													 Feedback
 												</a>
@@ -720,7 +713,7 @@ $list=$feedC->afficherfeed();
 
 			<div class="row">
 						<div class="col-xs-12">
-							<form  action="deletefeed.php" class="form-horizontal" method="POST">
+							<form id="form" action="addchaine.php" class="form-horizontal" method="POST">
 								<section class="panel">
 									<header class="panel-heading">
 										<div class="panel-actions">
@@ -731,94 +724,28 @@ $list=$feedC->afficherfeed();
 										<h2 class="panel-title">Add Team</h2>
 										<p class="panel-subtitle">
 											you need to fill these.
-
 										</p>
 
-											
-									</header>
-									<footer class="panel-footer">
-										<?PHP
-											foreach($list as $row){
-										?>
-										<div class="col-md-12">
-											<section class="panel-group mb-xlg">
-											<div class="widget-twitter-profile">
-											
-												<div class="profile-info">
-													<div class="profile-picture">
-														<img src="assets/images/!happy-face.png" alt="">
-													</div>
-													<div class="profile-account">
-														<h3 class="name text-semibold"><?PHP echo $row['nom']; ?></h3>
-														<a href="#" class="account"><?PHP echo $row['mail']; ?></a>
-														<input type="hidden" name="mail" value="<?PHP echo $row['mail']; ?>">
-													</div>
-													
-												</div>
-												<div class="profile-quote">
-													<blockquote>
-														<p>
-															<?PHP echo $row['bio']; ?>
-														</p>
-													</blockquote>
-													<div class="quote-footer">
-													
-													
-														<button id="delete" type="submit" class="mb-xs mt-xs mr-xs btn btn-danger" name="delete" value="<?PHP echo $row['nom']; ?>" >Delete</button>
-														
-
-													<a class="mb-xs mt-xs mr-xs btn btn-success" name="reply" value="<?PHP echo $row['mail']; ?>"data-target="#myModal"data-toggle="modal">Reply </a>
-
-
-
-
-
-
-
-													</div>
+											<div class="form-group">
+												<label class="col-md-3 control-label">choose a channel</label>
+												<div class="col-md-6">
+													<select class="form-control" data-plugin-multiselect id="ms_example1" name="chaine">
+														<option value="twitchpresentsfr" selected>twitchpresentsfr</option>
+														<option value="ogaminglol">ogaminglol</option>
+														<option value="fortnite">fortnite</option>
+													</select>
 												</div>
 											</div>
-										</section>
-									</div>
-
-<div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        	<button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">
-                                Quick reply
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            
-
-                               
-                                <div class="form-group">
-                                    <label> Message:</label>
-                                    <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Your Message Here" maxlength="6000" rows="7" ></textarea>
-                                </div>
-                                <br></br>
-                                <button type="submit" class="btn btn-lg btn-success btn-block" >Send &rarr;</button>
-                         
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-<?PHP
-										}
-										?>
-										<div class="text-right mr-lg">
-								
-								<a href="printf.php" target="_blank" class="btn btn-primary ml-sm"><i class="fa fa-print"></i> Print</a>
-							</div>
+									</header>
+									<footer class="panel-footer">
+										<div class="row">
+											<div class="col-sm-9 col-sm-offset-3">
+												<button class="btn btn-primary" name="ok">Submit</button>
+											</div>
+										</div>
 									</footer>
 
+									
 
 								</section>
 							</form>

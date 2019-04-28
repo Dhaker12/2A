@@ -1,19 +1,17 @@
-
 <?PHP
-include "../core/feedC.php";
-$feedC=new feedC();
-$list=$feedC->afficherfeed();
+include "../core/teamC.php";
+$team1C=new teamC();
+$list=$team1C->showteams();
 
-//var_dump($listeEmployes->fetchAll());
 ?>
+<!doctype html>
 <html class="fixed">
 	<head>
 
 		<!-- Basic -->
-		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Advanced Forms | Okler Themes | Porto-Admin</title>
+		<title>Charts | Okler Themes | Porto-Admin</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -31,19 +29,7 @@ $list=$feedC->afficherfeed();
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
 
 		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
-		<link rel="stylesheet" href="assets/vendor/select2/select2.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" />
-		<link rel="stylesheet" href="assets/vendor/dropzone/css/basic.css" />
-		<link rel="stylesheet" href="assets/vendor/dropzone/css/dropzone.css" />
-		<link rel="stylesheet" href="assets/vendor/bootstrap-markdown/css/bootstrap-markdown.min.css" />
-		<link rel="stylesheet" href="assets/vendor/summernote/summernote.css" />
-		<link rel="stylesheet" href="assets/vendor/summernote/summernote-bs3.css" />
-		<link rel="stylesheet" href="assets/vendor/codemirror/lib/codemirror.css" />
-		<link rel="stylesheet" href="assets/vendor/codemirror/theme/monokai.css" />
+		<link rel="stylesheet" href="assets/vendor/morris/morris.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -55,31 +41,7 @@ $list=$feedC->afficherfeed();
 		<link rel="stylesheet" href="assets/stylesheets/theme-custom.css">
 
 		<!-- Head Libs -->
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-	    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" />
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
-
-<style>
-  body
-  {
-   margin:0;
-   padding:0;
-   background-color:#f1f1f1;
-  }
-  .box
-  {
-   width:1270px;
-   padding:20px;
-   background-color:#fff;
-   border:1px solid #ccc;
-   border-radius:5px;
-   margin-top:25px;
-   box-sizing:border-box;
-  }
-  </style>
 
 	</head>
 	<body>
@@ -339,7 +301,7 @@ $list=$feedC->afficherfeed();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-copy" aria-hidden="true"></i>
-											<span>Actuality</span>
+											<span>Pages</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -421,33 +383,113 @@ $list=$feedC->afficherfeed();
 									</li>
 									<li class="nav-parent nav-expanded nav-active">
 										<a>
-											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Teams</span>
+											<i class="fa fa-tasks" aria-hidden="true"></i>
+											<span>UI Elements</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="addteam.php">
-													 Add team
+												<a href="ui-elements-typography.html">
+													 Typography
 												</a>
 											</li>
 											<li>
-												<a href="teamlist.html" >
-													 My teams
+												<a href="ui-elements-icons.html">
+													 Icons
 												</a>
 											</li>
-											<li >
-												<a href="twitch.php">
-													 Twitch channel
+											<li>
+												<a href="ui-elements-tabs.html">
+													 Tabs
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-panels.html">
+													 Panels
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-widgets.html">
+													 Widgets
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-portlets.html">
+													 Portlets
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-buttons.html">
+													 Buttons
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-alerts.html">
+													 Alerts
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-notifications.html">
+													 Notifications
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-modals.html">
+													 Modals
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-lightbox.html">
+													 Lightbox
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-progressbars.html">
+													 Progress Bars
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-sliders.html">
+													 Sliders
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-carousels.html">
+													 Carousels
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-accordions.html">
+													 Accordions
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-nestable.html">
+													 Nestable
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-tree-view.html">
+													 Tree View
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-grid-system.html">
+													 Grid System
 												</a>
 											</li>
 											<li class="nav-active">
-												<a href="Feedback.php">
-													 Feedback
+												<a href="ui-elements-charts.html">
+													 Charts
 												</a>
 											</li>
-											<li >
-												<a href="stats.php">
-													 Stats
+											<li>
+												<a href="ui-elements-animations.html">
+													 Animations
+												</a>
+											</li>
+											<li>
+												<a href="ui-elements-extra.html">
+													 Extra
 												</a>
 											</li>
 										</ul>
@@ -455,22 +497,37 @@ $list=$feedC->afficherfeed();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Players</span>
+											<span>Forms</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="addplayer.html">
-													 Add player
+												<a href="forms-basic.html">
+													 Basic
 												</a>
 											</li>
 											<li>
-												<a href="myplayers.html">
-													 My players
+												<a href="forms-advanced.html">
+													 Advanced
 												</a>
 											</li>
 											<li>
 												<a href="forms-validation.html">
-													 edit players
+													 Validation
+												</a>
+											</li>
+											<li>
+												<a href="forms-layouts.html">
+													 Layouts
+												</a>
+											</li>
+											<li>
+												<a href="forms-wizard.html">
+													 Wizard
+												</a>
+											</li>
+											<li>
+												<a href="forms-code-editor.html">
+													 Code Editor
 												</a>
 											</li>
 										</ul>
@@ -478,7 +535,7 @@ $list=$feedC->afficherfeed();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>Products</span>
+											<span>Tables</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -516,7 +573,7 @@ $list=$feedC->afficherfeed();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-map-marker" aria-hidden="true"></i>
-											<span>Orders</span>
+											<span>Maps</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -539,7 +596,7 @@ $list=$feedC->afficherfeed();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Carts</span>
+											<span>Layouts</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -567,7 +624,7 @@ $list=$feedC->afficherfeed();
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-align-left" aria-hidden="true"></i>
-											<span>Clients</span>
+											<span>Menu Levels</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -597,95 +654,8 @@ $list=$feedC->afficherfeed();
 											</li>
 										</ul>
 									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Tournaments</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="#">
-													 ayoub
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Boxed
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Menu Collapsed
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Scroll
-												</a>
-											</li>
-										</ul>
-									</li>
-
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Customer service</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="#">
-													 Default
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Boxed
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Menu Collapsed
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Scroll
-												</a>
-											</li>
-										</ul>
-									</li>
-									
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Feedback</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="#">
-													 esfe
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Boxed
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Menu Collapsed
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Scroll
-												</a>
-											</li>
-										</ul>
-									</li>
 									<li>
-										<a href="../../dist/index.html" target="_blank"> 
-
+										<a href="http://themeforest.net/item/porto-responsive-html5-template/4106987?ref=Okler" target="_blank">
 											<i class="fa fa-external-link" aria-hidden="true"></i>
 											<span>Front-End <em class="not-included">(Not Included)</em></span>
 										</a>
@@ -693,13 +663,71 @@ $list=$feedC->afficherfeed();
 								</ul>
 							</nav>
 				
+							<hr class="separator" />
+				
+							<div class="sidebar-widget widget-tasks">
+								<div class="widget-header">
+									<h6>Projects</h6>
+									<div class="widget-toggle">+</div>
+								</div>
+								<div class="widget-content">
+									<ul class="list-unstyled m-none">
+										<li><a href="#">Porto HTML5 Template</a></li>
+										<li><a href="#">Tucson Template</a></li>
+										<li><a href="#">Porto Admin</a></li>
+									</ul>
+								</div>
+							</div>
+				
+							<hr class="separator" />
+				
+							<div class="sidebar-widget widget-stats">
+								<div class="widget-header">
+									<h6>Company Stats</h6>
+									<div class="widget-toggle">+</div>
+								</div>
+								<div class="widget-content">
+									<ul>
+										<li>
+											<span class="stats-title">Stat 1</span>
+											<span class="stats-complete">85%</span>
+											<div class="progress">
+												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+													<span class="sr-only">85% Complete</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<span class="stats-title">Stat 2</span>
+											<span class="stats-complete">70%</span>
+											<div class="progress">
+												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+													<span class="sr-only">70% Complete</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<span class="stats-title">Stat 3</span>
+											<span class="stats-complete">2%</span>
+											<div class="progress">
+												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+													<span class="sr-only">2% Complete</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+				
+					</div>
 				
 				</aside>
 				<!-- end: sidebar -->
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Basic Forms</h2>
+						<h2>Charts</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -708,8 +736,8 @@ $list=$feedC->afficherfeed();
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>Forms</span></li>
-								<li><span>Basic</span></li>
+								<li><span>UI Elements</span></li>
+								<li><span>Charts</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -717,126 +745,61 @@ $list=$feedC->afficherfeed();
 					</header>
 
 					<!-- start: page -->
-
-			<div class="row">
-						<div class="col-xs-12">
-							<form  action="deletefeed.php" class="form-horizontal" method="POST">
-								<section class="panel">
-									<header class="panel-heading">
-										<div class="panel-actions">
-											<a href="#" class="fa fa-caret-down"></a>
-											<a href="#" class="fa fa-times"></a>
-										</div>
-
-										<h2 class="panel-title">Add Team</h2>
-										<p class="panel-subtitle">
-											you need to fill these.
-
-										</p>
-
-											
-									</header>
-									<footer class="panel-footer">
-										<?PHP
-											foreach($list as $row){
-										?>
-										<div class="col-md-12">
-											<section class="panel-group mb-xlg">
-											<div class="widget-twitter-profile">
-											
-												<div class="profile-info">
-													<div class="profile-picture">
-														<img src="assets/images/!happy-face.png" alt="">
-													</div>
-													<div class="profile-account">
-														<h3 class="name text-semibold"><?PHP echo $row['nom']; ?></h3>
-														<a href="#" class="account"><?PHP echo $row['mail']; ?></a>
-														<input type="hidden" name="mail" value="<?PHP echo $row['mail']; ?>">
-													</div>
-													
+						
+								
+						
+								<div class="row">
+									<?PHP
+                                            foreach($list as $row){
+                                        ?>
+									<div class="col-md-4">
+										<section class="panel panel-danger">
+											<header class="panel-heading">
+												<div class="panel-actions">
+													<a href="#" class="fa fa-caret-down"></a>
+													<a href="#" class="fa fa-times"></a>
 												</div>
-												<div class="profile-quote">
-													<blockquote>
-														<p>
-															<?PHP echo $row['bio']; ?>
-														</p>
-													</blockquote>
-													<div class="quote-footer">
-													
-													
-														<button id="delete" type="submit" class="mb-xs mt-xs mr-xs btn btn-danger" name="delete" value="<?PHP echo $row['nom']; ?>" >Delete</button>
-														
+						
+												<h2 class="panel-title">Team's winrate</h2>
+												<p class="panel-subtitle">behi</p>
+											</header>
 
-													<a class="mb-xs mt-xs mr-xs btn btn-success" name="reply" value="<?PHP echo $row['mail']; ?>"data-target="#myModal"data-toggle="modal">Reply </a>
-
-
-
-
-
-
-
+											<div class="panel-body">
+												<div class="thumb-info mb-md">
+													<a href="index.html">
+										<?PHP echo'
+                    <img src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'" class="rounded img-responsive" />';?>
+                </a>
+										<div class="thumb-info-title">
+											<span class="thumb-info-inner" ><?PHP echo $row['nom']; ?></span>
+											<span class="thumb-info-type"><?PHP echo $row['names']; ?></span>
+										</div>
+												</div>
+												<div class="row text-center">
+													<div class="col-md-6">
+														<div class="circular-bar">
+															<div class="circular-bar-chart" data-percent="<?PHP echo $row['winr']; ?>" data-plugin-options='{ "barColor": "#0088CC", "delay": 300 }'>
+																<strong>winrate</strong>
+																<label><span class="percent">85</span>%</label>
+															</div>
+														</div>
 													</div>
+													
 												</div>
 											</div>
 										</section>
 									</div>
-
-<div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        	<button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">
-                                Quick reply
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            
-
-                               
-                                <div class="form-group">
-                                    <label> Message:</label>
-                                    <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Your Message Here" maxlength="6000" rows="7" ></textarea>
-                                </div>
-                                <br></br>
-                                <button type="submit" class="btn btn-lg btn-success btn-block" >Send &rarr;</button>
-                         
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-<?PHP
-										}
-										?>
-										<div class="text-right mr-lg">
+									<?PHP
+                                            }
+                                        ?>
+								</div>
 								
-								<a href="printf.php" target="_blank" class="btn btn-primary ml-sm"><i class="fa fa-print"></i> Print</a>
-							</div>
-									</footer>
-
-
-								</section>
-							</form>
-						</div>
-						</div>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-						<br></br>
-
+							
+						
+						
 					<!-- end: page -->
 				</section>
 			</div>
-						
-					
-					<!-- end: page -->
-			
 
 			<aside id="sidebar-right" class="sidebar-right">
 				<div class="nano">
@@ -907,29 +870,6 @@ $list=$feedC->afficherfeed();
 			</aside>
 		</section>
 
-		<div id="dialog" class="modal-block mfp-hide">
-			<section class="panel">
-				<header class="panel-heading">
-					<h2 class="panel-title">Are you sure?</h2>
-				</header>
-				<div class="panel-body">
-					<div class="modal-wrapper">
-						<div class="modal-text">
-							<p>Are you sure that you want to delete this row?</p>
-						</div>
-					</div>
-				</div>
-				<footer class="panel-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button id="dialogConfirm" class="btn btn-primary">Confirm</button>
-							<button id="dialogCancel" class="btn btn-default">Cancel</button>
-						</div>
-					</div>
-				</footer>
-			</section>
-		</div>
-
 		<!-- Vendor -->
 		<script src="assets/vendor/jquery/jquery.js"></script>
 		<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
@@ -940,9 +880,19 @@ $list=$feedC->afficherfeed();
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
 		<!-- Specific Page Vendor -->
-		<script src="assets/vendor/select2/select2.js"></script>
-		<script src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
-		<script src="assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+		<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+		<script src="assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.js"></script>
+		<script src="assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.pie.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.categories.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.resize.js"></script>
+		<script src="assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+		<script src="assets/vendor/raphael/raphael.js"></script>
+		<script src="assets/vendor/morris/morris.js"></script>
+		<script src="assets/vendor/gauge/gauge.js"></script>
+		<script src="assets/vendor/snap-svg/snap.svg.js"></script>
+		<script src="assets/vendor/liquid-meter/liquid.meter.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
@@ -955,6 +905,6 @@ $list=$feedC->afficherfeed();
 
 
 		<!-- Examples -->
-		<script src="assets/javascripts/tables/examples.datatables.editable.js"></script>
+		<script src="assets/javascripts/ui-elements/examples.charts.js"></script>
 	</body>
 </html>
