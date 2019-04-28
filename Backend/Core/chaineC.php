@@ -1,4 +1,5 @@
 <?php
+include "../config.php";
 class chainec
 {
     function showchaine(){

@@ -4,7 +4,7 @@ class teamc
 {
 
 function ajouterTeam($team){
-    $sql="insert into teams (nom,game,nbr,mail,description,names,image) values (:nom,:game,:nbr,:mail,:description,:names,:image)";
+    $sql="insert into teams (nom,game,nbr,mail,description,names,image,winr) values (:nom,:game,:nbr,:mail,:description,:names,:image,:winr)";
     $db = config::getConnexion();
     try{
         $req=$db->prepare($sql);
@@ -15,6 +15,7 @@ function ajouterTeam($team){
         $mail=$team->getmail();
         $description=$team->getdescription();
         $names=$team->getnames();
+        $winr=$team->getwinr();
         $image=$team->getimage();
     
     $req->bindValue(':nom',$nom);
@@ -23,6 +24,7 @@ function ajouterTeam($team){
     $req->bindValue(':mail',$mail);
     $req->bindValue(':description',$description);
     $req->bindValue(':names',$names);
+    $req->bindValue(':winr',$winr);
     $req->bindValue(':image',$image);
     
             $req->execute();
@@ -39,13 +41,13 @@ function ajouterTeam($team){
         echo "nbr: ".$team->getnbr()."<br>";
         echo "contact: ".$team->getmail()."<br>";
         echo "members: ".$team->getdescription()."<br>";
-        echo "members: ".$team->getnames()."<br>";
+        echo "winr: ".$team->getwinr()."<br>";
         echo "image: ".$team->getimage()."<br>";
 
     }
   function showplayers(){
         //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
-        $sql="SElECT nick From team";
+        $sql="SElECT nick From team where clan='' ";
         $db = config::getConnexion();
         try{
         $list=$db->query($sql);
@@ -93,6 +95,54 @@ function deleteteam($nom){
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
         }
+    }
+    function cs(){
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SELECT COUNT(*) FROM teams WHERE game='Conter Strike'";
+        $db = config::getConnexion();
+        try{
+        $list=$db->query($sql);
+        return $list;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+    function all(){
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SELECT COUNT(*) FROM teams";
+        $db = config::getConnexion();
+        try{
+        $list=$db->query($sql);
+        return $list;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+     function dota(){
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SELECT COUNT(*) FROM teams WHERE game='Dota 2'";
+        $db = config::getConnexion();
+        try{
+        $list=$db->query($sql);
+        return $list;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+     function lol(){
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SELECT COUNT(*) FROM teams WHERE game='League of legends'";
+        $db = config::getConnexion();
+        try{
+        $list=$db->query($sql);
+        return $list;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }   
     }
 
 } 
