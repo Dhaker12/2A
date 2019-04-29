@@ -10,15 +10,12 @@ class order
       private $total;
       private $dstate;
 
-  function __construct($reference,$name,$date,$state,$quantite,$total,$dstate)
+  function __construct($name,$quantite,$total)
   {
-    $this->reference = $reference;
-    $this->name = $name;
-    $this->date = $date;
-    $this->state = $state;
+    $this->name= $name;
     $this->quantite = $quantite;
     $this->total = $total;
-    $this->dstate = $dstate;
+   
   }
   function getreference (){return $this->reference;}
   function getname (){return $this->name;}
