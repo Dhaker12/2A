@@ -272,12 +272,11 @@
 						</div>
 					</div>
 				
-					
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li class="nav-active">
+									<li>
 										<a href="index.html">
 											<i class="fa fa-home" aria-hidden="true"></i>
 											<span>Dashboard</span>
@@ -293,7 +292,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-copy" aria-hidden="true"></i>
-											<span>Actuality</span>
+											<span>Pages</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -376,7 +375,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>Teams</span>
+											<span>UI Elements</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -486,10 +485,10 @@
 											</li>
 										</ul>
 									</li>
-									<li class="nav-parent">
+									<li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Players</span>
+											<span>Forms</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -502,7 +501,7 @@
 													 Advanced
 												</a>
 											</li>
-											<li>
+											<li class="nav-active">
 												<a href="forms-validation.html">
 													 Validation
 												</a>
@@ -527,31 +526,45 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>Store</span>
+											<span>Tables</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="forms-validation.html">
-													 Manager
+												<a href="tables-basic.html">
+													 Basic
 												</a>
 											</li>
 											<li>
-												<a href="affichage.php">
-													 Product
+												<a href="tables-advanced.html">
+													 Advanced
 												</a>
 											</li>
 											<li>
-												<a href="review.php">
-													 Reviews
+												<a href="tables-responsive.html">
+													 Responsive
 												</a>
 											</li>
-
+											<li>
+												<a href="tables-editable.html">
+													 Editable
+												</a>
+											</li>
+											<li>
+												<a href="tables-ajax.html">
+													 Ajax
+												</a>
+											</li>
+											<li>
+												<a href="tables-pricing.html">
+													 Pricing
+												</a>
+											</li>
 										</ul>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-map-marker" aria-hidden="true"></i>
-											<span>Orders</span>
+											<span>Maps</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -574,7 +587,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Carts</span>
+											<span>Layouts</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -602,7 +615,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-align-left" aria-hidden="true"></i>
-											<span>Clients</span>
+											<span>Menu Levels</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -632,66 +645,80 @@
 											</li>
 										</ul>
 									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Tournaments</span>
+									<li>
+										<a href="http://themeforest.net/item/porto-responsive-html5-template/4106987?ref=Okler" target="_blank">
+											<i class="fa fa-external-link" aria-hidden="true"></i>
+											<span>Front-End <em class="not-included">(Not Included)</em></span>
 										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="#">
-													 ayoub
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Boxed
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Menu Collapsed
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													 Scroll
-												</a>
-											</li>
-										</ul>
 									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Customer service</span>
-										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="affichageRec.php">
-													 Reclamation
-												</a>
-											</li>
-										</ul>
-									</li>
-									
 								</ul>
 							</nav>
 				
 							<hr class="separator" />
 				
-							
+							<div class="sidebar-widget widget-tasks">
+								<div class="widget-header">
+									<h6>Projects</h6>
+									<div class="widget-toggle">+</div>
+								</div>
+								<div class="widget-content">
+									<ul class="list-unstyled m-none">
+										<li><a href="#">Porto HTML5 Template</a></li>
+										<li><a href="#">Tucson Template</a></li>
+										<li><a href="#">Porto Admin</a></li>
+									</ul>
+								</div>
+							</div>
 				
 							<hr class="separator" />
 				
+							<div class="sidebar-widget widget-stats">
+								<div class="widget-header">
+									<h6>Company Stats</h6>
+									<div class="widget-toggle">+</div>
+								</div>
+								<div class="widget-content">
+									<ul>
+										<li>
+											<span class="stats-title">Stat 1</span>
+											<span class="stats-complete">85%</span>
+											<div class="progress">
+												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+													<span class="sr-only">85% Complete</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<span class="stats-title">Stat 2</span>
+											<span class="stats-complete">70%</span>
+											<div class="progress">
+												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+													<span class="sr-only">70% Complete</span>
+												</div>
+											</div>
+										</li>
+										<li>
+											<span class="stats-title">Stat 3</span>
+											<span class="stats-complete">2%</span>
+											<div class="progress">
+												<div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+													<span class="sr-only">2% Complete</span>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 				
 					</div>
+				
 				</aside>
 				<!-- end: sidebar -->
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Managing Products</h2>
+						<h2>Form Validation</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -700,8 +727,8 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>Store </span></li>
-								<li><span>Manager</span></li>
+								<li><span>Forms</span></li>
+								<li><span>Validation</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -709,11 +736,9 @@
 					</header>
 
 					<!-- start: page -->
-						<!-- col-md-6 -->
-						<!-- ajouter Produit -->
+					<div class="row">
 						<div class="col-md-6">
-							<form method="post" action="ajouterProduit.php" enctype="multipart/form-data">
-					
+							<form id="form" action="forms-validation.html" class="form-horizontal">
 								<section class="panel">
 									<header class="panel-heading">
 										<div class="panel-actions">
@@ -721,81 +746,44 @@
 											<a href="#" class="fa fa-times"></a>
 										</div>
 
-										<h2 class="panel-title">Adding a Product</h2> 
-
+										<h2 class="panel-title">Basic Form Validation</h2>
 										<p class="panel-subtitle">
-											Ajouter un produit et le personnaliser .
+											Basic validation will display a label with the error after the form control.
 										</p>
 									</header>
 									<div class="panel-body">
 										<div class="form-group">
-											<div class="validation-message">
-											<ul></ul>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Product Name <span class="required">*</span></label>
+											<label class="col-sm-3 control-label">Full Name <span class="required">*</span></label>
 											<div class="col-sm-9">
-												<input type="text" name="nom" class="form-control" title="Plase enter a name." placeholder="nom de produit" required/>
+												<input type="text" name="fullname" class="form-control" placeholder="eg.: John Doe" required/>
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-3 control-label">Reference <span class="required">*</span></label>
+											<label class="col-sm-3 control-label">Email <span class="required">*</span></label>
 											<div class="col-sm-9">
-												<input type="text" name="reference" class="form-control" title="Plase enter a reference." placeholder="réference de produit" required/>
+												<div class="input-group">
+													<span class="input-group-addon">
+														<i class="fa fa-envelope"></i>
+													</span>
+													<input type="email" name="email" class="form-control" placeholder="eg.: email@email.com" required/>
+												</div>
 											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Price <span class="required">*</span></label>
 											<div class="col-sm-9">
-												<input type="number" name="prix" class="form-control" title="Please enter the price." placeholder="prix de produit "min="1" max="100000"required/>
-											</div>
-										</div>
-										
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Description <span class="required">*</span></label>
-											<div class="col-sm-9">
-												<textarea name="description" rows="5" title="Your resume is too short." class="form-control" placeholder="Entrez la description de votre produit"required></textarea>
-											</div>
-										</div>
 
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Cathegory</label>
-											<div class="col-sm-9">
-												<div class="radio-custom radio-primary">
-													<input id="team product" name="cathegory" type="radio" value="team product" required />
-													<label for="team product">Team Product</label>
-												</div>
-												<div class="radio-custom radio-primary">
-													<input id="event product" name="cathegory" type="radio" value="event product" />
-													<label for="event product">Event Product</label>
-												</div>
-												<div class="radio-custom radio-primary">
-													<input id="Gaming Product" name="cathegory" type="radio" value="Gaming Product" />
-													<label for="Gaming Product">Gaming Product</label>
-												</div>
-												<label class="error" for="cathegory"></label>
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-3 control-label">Quantity <span class="required">*</span></label>
+											<label class="col-sm-3 control-label">GitHub</label>
 											<div class="col-sm-9">
-												<input type="number" name="quantite" class="form-control" title="Please enter the quantity." placeholder="quantite de produit "min="0" max="100000"required/>
+												<input type="url" name="github" class="form-control" placeholder="eg.: https://github.com/johndoe" />
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-3 control-label">Guarantee <span class="required">*</span></label>
+											<label class="col-sm-3 control-label">Skills <span class="required">*</span></label>
 											<div class="col-sm-9">
-												<input type="number" name="garantie" class="form-control" title="Please enter the Guarantee duration." placeholder="Nombre de mois de garantie "min="0" max="100000"required/>
+												<textarea name="skills" rows="5" class="form-control" placeholder="Describe your skills" required></textarea>
 											</div>
 										</div>
-
-											<div class="form-group">
-											<label class="col-sm-3 control-label">The Album</label>
-											<div class="col-sm-9"><input type="file" id="file-multiple-input" name="photo" multiple="" class="form-control-file">
-                                            </div>
-                                   			</div>
-										</div>
-										
 									</div>
 									<footer class="panel-footer">
 										<div class="row">
@@ -808,10 +796,9 @@
 								</section>
 							</form>
 						</div>
-						<!-- supprimer Produit -->
+						<!-- col-md-6 -->
 						<div class="col-md-6">
-							<form method="post" action="supprimerProduit.php">
-					
+							<form id="chk-radios-form" action="forms-validation.html">
 								<section class="panel">
 									<header class="panel-heading">
 										<div class="panel-actions">
@@ -819,106 +806,54 @@
 											<a href="#" class="fa fa-times"></a>
 										</div>
 
-										<h2 class="panel-title">Delete a Product</h2> 
+										<h2 class="panel-title">Validating Checkbox and Radios</h2>
 
 										<p class="panel-subtitle">
-											Supprimer un produit.
+											Easily validate checkboxes and radios tags.
 										</p>
 									</header>
 									<div class="panel-body">
 										<div class="form-group">
-											<div class="validation-message">
-											<ul></ul>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Choice <span class="required">*</span></label>
+											<label class="col-sm-3 control-label">Porto Admin is <span class="required">*</span></label>
 											<div class="col-sm-9">
-												<select name="with">
-												<option>Please select .. </option>
-												<option value="Reference">Reference</option>
-												<option value="Nom">Nom</option>
-												<option value="Prix">Prix</option>
-												</select>
+												<div class="radio-custom radio-primary">
+													<input id="awesome" name="porto_is" type="radio" value="awesome" required />
+													<label for="awesome">Awesome</label>
+												</div>
+												<div class="radio-custom radio-primary">
+													<input id="very-awesome" name="porto_is" type="radio" value="very-awesome" />
+													<label for="very-awesome">Very Awesome</label>
+												</div>
+												<div class="radio-custom radio-primary">
+													<input id="ultra-awesome" name="porto_is" type="radio" value="ultra-awesome" />
+													<label for="ultra-awesome">Ultra Awesome</label>
+												</div>
+												<label class="error" for="porto_is"></label>
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-3 control-label">Delete <span class="required">*</span></label>
+											<label class="col-sm-3 control-label">I will use it for <span class="required">*</span></label>
 											<div class="col-sm-9">
-												<input type="text" name="supp" class="form-control" title="Plase enter your text." placeholder="type here .." required/>
+												<div class="checkbox-custom chekbox-primary">
+													<input id="for-project" value="project" type="checkbox" name="for[]" required />
+													<label for="for-project">My Project</label>
+												</div>
+												<div class="checkbox-custom chekbox-primary">
+													<input id="for-website" value="website" type="checkbox" name="for[]" />
+													<label for="for-website">My Website</label>
+												</div>
+												<div class="checkbox-custom chekbox-primary">
+													<input id="for-all" value="all" type="checkbox" name="for[]" />
+													<label for="for-all">All things I do</label>
+												</div>
+												<label class="error" for="for[]"></label>
 											</div>
 										</div>
-										
-										</div>
-										
 									</div>
 									<footer class="panel-footer">
 										<div class="row">
 											<div class="col-sm-9 col-sm-offset-3">
-												<button class="btn btn-primary">Delete</button>
-												<button type="reset" class="btn btn-default">Reset</button>
-											</div>
-										</div>
-									</footer>
-								</section>
-							</form>
-						</div>
-						<!-- Modifier Produit -->
-						<div class="col-md-6">
-							<form method="post" action="modifierProduit.php">
-					
-								<section class="panel">
-									<header class="panel-heading">
-										<div class="panel-actions">
-											<a href="#" class="fa fa-caret-down"></a>
-											<a href="#" class="fa fa-times"></a>
-										</div>
-
-										<h2 class="panel-title">Modify a Product</h2> 
-
-										<p class="panel-subtitle">
-											Modifier un produit.
-										</p>
-									</header>
-									<div class="panel-body">
-										<div class="form-group">
-											<div class="validation-message">
-											<ul></ul>
-										</div>
-										
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Modify <span class="required">*</span></label>
-											<div class="col-sm-9">
-												<select name="modwith" onchange="ModifSelect()" id="selectmodif">
-												<option>Please select .. </option>
-												<option value="Reference">Reference</option>
-												<option value="Nom">Nom</option>
-												<option value="Prix">Prix</option>
-												<option value="Type">Cathegory</option>
-												<option value="Photo">Photo</option>
-
-												</select>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">Product's refrence  <span class="required">*</span></label>
-											<div class="col-sm-9">
-											<input type="text" name="ref" class="form-control" title="Plase enter the refrence." placeholder="the refrence is .." required/>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-3 control-label">New value <span class="required">*</span></label>
-											<div class="col-sm-9">
-											<input type="text" name="new" class="form-control" title="Plase enter the new value.." placeholder="the new  value is .." required/>
-											</div>
-										</div>
-										
-										</div>
-										
-									</div>
-									<footer class="panel-footer">
-										<div class="row">
-											<div class="col-sm-9 col-sm-offset-3">
-												<button class="btn btn-primary">Modify</button>
+												<button class="btn btn-primary">Submit</button>
 												<button type="reset" class="btn btn-default">Reset</button>
 											</div>
 										</div>
@@ -927,8 +862,114 @@
 							</form>
 						</div>
 					</div>
-					
-					
+					<div class="row">
+						<div class="col-md-6">
+							<form id="summary-form" action="forms-validation.html" class="form-horizontal">
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions">
+											<a href="#" class="fa fa-caret-down"></a>
+											<a href="#" class="fa fa-times"></a>
+										</div>
+
+										<h2 class="panel-title">Validation Summary</h2>
+										<p class="panel-subtitle">
+											Validation summary will display an error list above the form.
+										</p>
+									</header>
+									<div class="panel-body">
+										<div class="validation-message">
+											<ul></ul>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Full Name <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="text" name="fullname" class="form-control" title="Plase enter a name." placeholder="eg.: John Doe" required/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Email <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="email" name="email" class="form-control" title="Please enter an email address." placeholder="eg.: john@doe.com" required/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">GitHub</label>
+											<div class="col-sm-9">
+												<input type="url" name="url" title="Please enter a valid url." class="form-control" placeholder="eg.: https://github.com/johndoe" />
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Resume <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<textarea name="resume" rows="5" title="Your resume is too short." class="form-control" placeholder="Enter your resume" required></textarea>
+											</div>
+										</div>
+									</div>
+									<footer class="panel-footer">
+										<div class="row">
+											<div class="col-sm-9 col-sm-offset-3">
+												<button class="btn btn-primary">Submit</button>
+												<button type="reset" class="btn btn-default">Reset</button>
+											</div>
+										</div>
+									</footer>
+								</section>
+							</form>
+						</div>
+						<div class="col-md-6">
+							<form id="selects-form" action="forms-validation.html">
+								<section class="panel">
+									<header class="panel-heading">
+										<div class="panel-actions">
+											<a href="#" class="fa fa-caret-down"></a>
+											<a href="#" class="fa fa-times"></a>
+										</div>
+
+										<h2 class="panel-title">Validation Selects</h2>
+										<p class="panel-subtitle">
+											Easily validate select tags, does not matter if is single or multiple.
+										</p>
+									</header>
+									<div class="panel-body">
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Company</label>
+											<div class="col-sm-9">
+												<select id="company" class="form-control" required>
+													<option value="">Choose a Company</option>
+													<option value="apple">Apple</option>
+													<option value="google">Google</option>
+													<option value="microsoft">Microsoft</option>
+													<option value="yahoo">Yahoo</option>
+												</select>
+												<label class="error" for="company"></label>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Browsers</label>
+											<div class="col-sm-9">
+												<select id="browsers" name="browsers" title="Please select at least one browser" class="form-control" size="5" multiple="multiple" required>
+													<option value="chrome">Chrome / Safari</option>
+													<option value="ff">Firefox</option>
+													<option value="ie">Internet Explorer</option>
+													<option value="opera">Opera</option>
+												</select>
+												<label class="error" for="browsers"></label>
+											</div>
+										</div>
+									</div>
+									<footer class="panel-footer">
+										<div class="row">
+											<div class="col-sm-9 col-sm-offset-3">
+												<button class="btn btn-primary">Submit</button>
+												<button type="reset" class="btn btn-default">Reset</button>
+											</div>
+										</div>
+									</footer>
+								</section>
+							</form>
+						</div>
+					</div>
 					<!-- end: page -->
 				</section>
 			</div>
