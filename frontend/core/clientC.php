@@ -1,4 +1,5 @@
 <?PHP
+
 include "../entities/client.php";
 include "../config.php";
 class ClientC {
@@ -79,47 +80,37 @@ function afficherclient ($client){
             die('Erreur: '.$e->getMessage());
         }
 	}
-	function modifierclient($client,$email){
-		$sql="UPDATE client SET email=:emaill, firstname=:firstname,lastname=:lastname,address=:address,companyname=:companyname,town:=town,email=:email,phone=:phone,state=:state,postcode=:postcode,country=:country WHERE email=:email";
-		
+	function modifierclient($ref,$new,$modwhat){
+		if ($modwhat=="last name") {
+			$sql="UPDATE client SET lastname=:input WHERE email=:ref";
+		}
+		if ($modwhat=="first name") {
+			$sql="UPDATE client SET firstname=:input WHERE email=:ref";
+
+		}
+		if ($modwhat=="address") {
+			$sql="UPDATE client SET address=:input WHERE email=:ref";
+		}
+		if ($modwhat=="email") {
+			$sql="UPDATE client SET email=:input WHERE email=:ref";
+		}
+		if ($modwhat=="company") {
+			$sql="UPDATE client SET companyname=:input WHERE email=:ref";
+		}
+
 		$db = config::getConnexion();
-		//$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-try{		
         $req=$db->prepare($sql);
-		 $lastname=$client->getlastname();
-		$address=$client->getaddress();
-		$companyname=$client->getcompanyname();
-		$town=$client->gettown();
-		$email=$client->getemail();
-		$phone=$client->getphone();
-		$state=$client->getstate();
-		$postcode=$client->getpostcode();
-		$country=$client->getcountry();
-		$datas = array(':email'=>$email, ':email'=>$email, ':firstname'=>$firstname,':lastname'=>$lastname,':address'=>$address,':companyname'=>$companyname,':town'=>$town,':phone'=>$phone,':state'=>$state,':postcode'=>$postcode,':country'=>$country);
-		$req->bindValue(':emaill',$emaill);
-		$req->bindValue(':firstname',$firstname);
-		$req->bindValue(':lastname',$lastname);
-		$req->bindValue(':address',$address);
-		$req->bindValue(':companyname',$companyname);
-		$req->bindValue(':town',$town);
-		$req->bindValue(':email',$email);
-		$req->bindValue(':phone',$phone);
-		$req->bindValue(':state',$state);
-		$req->bindValue(':postcode',$postcode);
-		$req->bindValue(':country',$country);
-		
-		
-            $s=$req->execute();
-			
+		$req->bindValue(':input',$new);
+		$req->bindValue(':ref',$ref);
+
+		try{
+            $req->execute();
            // header('Location: index.php');
         }
         catch (Exception $e){
-            echo " Erreur ! ".$e->getMessage();
-   echo " Les datas : " ;
-  print_r($datas);
+            die('Erreur: '.$e->getMessage());
         }
-		
-	}
+        }
 	function recupererclient($email){
 		$sql="SELECT * from client where email=$email";
 		$db = config::getConnexion();
