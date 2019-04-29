@@ -1,5 +1,5 @@
 <?php
-include "../config.php";
+include_once "../config.php";
 
 class ProduitCore 
 {
@@ -28,6 +28,8 @@ class ProduitCore
                     <div class="nk-product-price">'.$row['prix'].' DT</div>
                     <div class="nk-gap-1"></div>
                     <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-dark-3 nk-btn-hover-color-main-1">Add to Cart</a>
+                    <div class="nk-gap-1"></div>
+                     <a href="addwish.php?reference='.$row['reference'].'"><input type="button" value="Add to wish"></a>
                 </div>
             </div>
         </div>';
@@ -39,6 +41,18 @@ class ProduitCore
         }
         }
          
+         function recupererproduit($Reference){
+        $sql="SELECT * from produit where reference='$Reference'";
+
+        $db = config::getConnexion();
+        try{
+        $liste=$db->query($sql);
+        return $liste;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
+    }
 
 }
 ?>
