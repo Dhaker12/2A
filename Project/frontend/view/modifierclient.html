@@ -18,7 +18,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>GoodGames | Store</title>
+    <title>GoodGames | Game Forum</title>
 
     <meta name="description" content="GoodGames - Bootstrap template for communities and games store">
     <meta name="keywords" content="game, gaming, template, HTML template, responsive, Bootstrap, premium">
@@ -138,7 +138,7 @@
                 </li>
                 
                 
-                 <li>
+                <li>
                     <a href="#" data-toggle="modal" >
                        
                     </a>
@@ -150,7 +150,9 @@
                         <div class="nk-widget-post">
                             
                             <h3 class="nk-post-title">
+
                                 <a >Wellcome <?php echo $_SESSION['lname']; ?></a><br>
+                                <a > <br> </a>
                                 <a href="account.php">My account</a><br>
                                 
                               
@@ -162,11 +164,7 @@
                         </div>
                     </div>
                 </li>
-                 <li>
-                    <a href="#" data-toggle="modal" data-target="#modalreclamer">
-                        <span class="fa fa-reclamer"></span>
-                    </a>
-                </li>
+                
                 
                 <li>
                     <span class="nk-cart-toggle">
@@ -232,7 +230,7 @@
                 
                 <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
                     
-        <li class=" nk-drop-item">
+        <li class="active nk-drop-item">
             <a href="elements.html">
                 Features
                 
@@ -244,13 +242,13 @@
                 
             </a>
         </li>
-        <li class=" nk-drop-item">
+        <li class="active nk-drop-item">
             <a href="forum.html">
                 Forum
                 
             </a><ul class="dropdown">
                         
-        <li>
+        <li class="active">
             <a href="forum.html">
                 Forum
                 
@@ -374,19 +372,49 @@
         </li>
                     </ul>
         </li>
-        <li class="active nk-drop-item">
+        <li class=" nk-drop-item">
             <a href="store.html">
                 Store
                 
             </a><ul class="dropdown">
                         
-        <li class="active">
-            <a href="affproduit.php">
+        <li>
+            <a href="store.html">
                 Store
                 
             </a>
         </li>
-           </ul>
+        <li>
+            <a href="store-product.html">
+                Product
+                
+            </a>
+        </li>
+        <li>
+            <a href="store-catalog.html">
+                Catalog
+                
+            </a>
+        </li>
+        <li>
+            <a href="store-catalog-alt.html">
+                Catalog Alt
+                
+            </a>
+        </li>
+        <li>
+            <a href="store-checkout.html">
+                Checkout
+                
+            </a>
+        </li>
+        <li>
+            <a href="store-cart.html">
+                Cart
+                
+            </a>
+        </li>
+                    </ul>
         </li>
                 </ul>
                 <ul class="nk-nav nk-nav-right nk-nav-icons">
@@ -447,12 +475,12 @@
     <ul class="nk-breadcrumbs">
         
         
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index-c.html">Home</a></li>
         
         
         <li><span class="fa fa-angle-right"></span></li>
         
-        <li><span>Store</span></li>
+        <li><span>Account</span></li>
         
     </ul>
 </div>
@@ -462,136 +490,65 @@
         
 
         
-<div class="container">
-    <!-- START: Categories -->
-    <div class="row vertical-gap">
-        <div class="col-lg-4">
-            <div class="nk-feature-1">
-                <div class="nk-feature-icon">
-                    <img src="assets/images/icon-mouse.png" alt="">
-                </div>
-                <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">PC</a></h3>
-                    <h3 class="nk-feature-title text-main-1"><a href="#">View Games</a></h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="nk-feature-1">
-                <div class="nk-feature-icon">
-                    <img src="assets/images/icon-gamepad.png" alt="">
-                </div>
-                <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">PS4</a></h3>
-                    <h3 class="nk-feature-title text-main-1"><a href="#">View Games</a></h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="nk-feature-1">
-                <div class="nk-feature-icon">
-                    <img src="assets/images/icon-gamepad-2.png" alt="">
-                </div>
-                <div class="nk-feature-cont">
-                    <h3 class="nk-feature-title"><a href="#">Xbox</a></h3>
-                    <h3 class="nk-feature-title text-main-1"><a href="#">View Games</a></h3>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END: Categories -->
+    <div class="container">
 
-    <!-- START: Some Products -->
-    <div class="nk-gap-2"></div>
-    <div class="row vertical-gap">
-        <div class="col-md-6 col-lg-4">
-            <div class="nk-gallery-item-box">
-                <a href="store-product.html" class="nk-gallery-item">
-                    <span class="nk-gallery-item-overlay"><span><span class="nk-icon-circles"></span></span></span>
-                    <img src="assets/images/product-4-lg.jpg" alt="She was bouncing">
-                </a>
-                <div class="nk-gallery-item-label">
-                    <h4 class="mb-0">She was bouncing</h4>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 order-lg-3">
-            <div class="nk-gallery-item-box">
-                <a href="store-product.html" class="nk-gallery-item">
-                    <span class="nk-gallery-item-overlay"><span><span class="nk-icon-circles"></span></span></span>
-                    <img src="assets/images/product-2-lg.jpg" alt="However, I have reason">
-                </a>
-                <div class="nk-gallery-item-label">
-                    <h4 class="mb-0">However, I have reason</h4>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12 col-lg-4">
-            <div class="row vertical-gap">
-                <div class="col-md-6">
-                    <div class="nk-gallery-item-box">
-                        <a href="store-product.html" class="nk-gallery-item">
-                            <span class="nk-gallery-item-overlay"><span><span class="nk-icon-circles"></span></span></span>
-                            <img src="assets/images/product-3-lg.jpg" alt="It was some time before">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="nk-gallery-item-box">
-                        <a href="store-product.html" class="nk-gallery-item">
-                            <span class="nk-gallery-item-overlay"><span><span class="nk-icon-circles"></span></span></span>
-                            <img src="assets/images/product-1-lg.jpg" alt="So saying he unbuckled">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="nk-gallery-item-box">
-                        <a href="store-product.html" class="nk-gallery-item">
-                            <span class="nk-gallery-item-overlay"><span><span class="nk-icon-circles"></span></span></span>
-                            <img src="assets/images/product-5-lg.jpg" alt="In all revolutions of">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="nk-gallery-item-box">
-                        <a href="store-product.html" class="nk-gallery-item">
-                            <span class="nk-gallery-item-overlay"><span><span class="nk-icon-circles"></span></span></span>
-                            <img src="assets/images/product-6-lg.jpg" alt="Just then her head ">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END: Some Products -->
+        <!-- START: Forums List -->
+       <div class="nk-forum-title">
+                            <form method="post" action="modifierclient.php">
+                    
+                                <section >
+                                    <header >
+                                        <h2 >Modify a client</h2> 
+                                    </header>
+                                    <div>
+                                        
+                                        
+                                        <div >
+                                            <label class="nk-forum-title-sub">Modify <span class="required">*</span></label>
+                                            <div class="col-sm-9">
+                                                <select name="modwith" onchange="ModifSelect()" id="selectmodif">
+                                                <option>Please select .. </option>
+                                                <option value="first name">first name</option>
+                                                <option value="last name">last name</option>
+                                                <option value="email">email</option>
+                                                <option value="address">address</option>
+                                                <option value="company">company</option>
 
-    <!-- START: Top 10 Best Sellers -->
-    <div class="nk-gap-3"></div>
-    <div class="nk-gap"></div>
-    
-    <!-- END: Top 10 Best Sellers -->
-
-    <!-- START: Featured Games -->
-    <div class="nk-gap-3"></div>
-    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">THE PRODUCTS</span> Catalogue</span></h3>
-    <div class="nk-gap"></div>
-    <div class="row vertical-gap">
-        
-        <?PHP
-                                                            include "../core/produitCore.php";
-                                                            $produitC=new ProduitCore();
-                                                            $listeproduit=$produitC->afficherProduitfront();
-                                                    ?>
-         
-    </div>
-    <!-- END: Featured Games -->
-
-    <!-- START: Most Popular -->
-
-    <!-- END: Most Popular -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="col-sm-3 control-label">client's email <span class="required">*</span></label>
+                                            <div class="col-sm-9">
+                                            <input type="text" name="ref" class="form-control" title="Plase enter the refrence." placeholder="the email is .." required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label">New value <span class="required">*</span></label>
+                                            <div class="col-sm-9">
+                                            <input type="text" name="new" class="form-control" title="Please enter the new value.." placeholder="the new  value is .." required/>
+                                            </div>
+                                        </div>
+                                        
+                                        </div>
+                                        
+                                    </div>
+                                    <footer >
+                                        <div class="row">
+                                            <div class="col-sm-9 col-sm-offset-3">
+                                                <button class="nk-btn nk-btn-rounded nk-btn-color-main-1">Modify</button>
+                                                <button type="reset" class="btn btn-default">Reset</button>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </section>
+                            </form>
+                        </div>
 </div>
+        <!-- END: Forums List -->
+ 
 
-<div class="nk-gap-2"></div>
+    <div class="nk-gap-2"></div>
 
 
         
@@ -599,13 +556,11 @@
 <footer class="nk-footer">
 
     <div class="container">
-        
         <div class="nk-gap-3"></div>
         <div class="row vertical-gap">
             <div class="col-md-6">
-                <form method="GET" action="ajouterreclamation.php">
                 <div class="nk-widget">
-                    <h4 class="nk-widget-title"><span class="text-main-1">Recalamation</span></h4>
+                    <h4 class="nk-widget-title"><span class="text-main-1">Contact</span> With Us</h4>
                     <div class="nk-widget-content">
                         <form action="php/ajax-contact-form.php" class="nk-form nk-form-ajax">
                             <div class="row vertical-gap sm-gap">
@@ -613,14 +568,11 @@
                                     <input type="email" class="form-control required" name="email" placeholder="Email *">
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control required" name="nom" placeholder="Family Name *">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control required" name="prenom" placeholder="Name *">
+                                    <input type="text" class="form-control required" name="name" placeholder="Name *">
                                 </div>
                             </div>
                             <div class="nk-gap"></div>
-                            <textarea class="form-control required" name="description" rows="5" placeholder="Your Reclamation *"></textarea>
+                            <textarea class="form-control required" name="message" rows="5" placeholder="Message *"></textarea>
                             <div class="nk-gap-1"></div>
                             <button class="nk-btn nk-btn-rounded nk-btn-color-white">
                                 <span>Send</span>
@@ -631,7 +583,6 @@
                         </form>
                     </div>
                 </div>
-                </form>
             </div>
             <div class="col-md-6">
                 <div class="nk-widget">
@@ -677,7 +628,6 @@
             </div>
         </div>
         <div class="nk-gap-3"></div>
-   
     </div>
 
     <div class="nk-copyright">
@@ -734,7 +684,7 @@
     
         <!-- START: Page Background -->
 
-    <img class="nk-page-background-top" src="assets/images/bg-top-4.png" alt="">
+    <img class="nk-page-background-top" src="assets/images/bg-top.png" alt="">
     <img class="nk-page-background-bottom" src="assets/images/bg-bottom.png" alt="">
 
 <!-- END: Page Background -->
@@ -822,64 +772,9 @@
 </div>
 <!-- END: Login Modal -->
 
-<!-- START: reclamer Modal -->
-<div class="nk-modal modal fade" id="modalreclamer" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span class="ion-android-close"></span>
-                </button>
-                <form method="GET" action="ajouterreclamation.php">
-                <h4 class="mb-0"><span class="text-main-1">Reclama</span>tion</h4>
-                <br><br>
-                <div class="nk-gap-1"></div>
-                <form action="#" class="nk-form text-white">
-                    <div class="row vertical-gap">
-                        
-                        <div class="nk-widget">
-                    <div class="nk-widget-content">
-                        <form action="php/ajax-contact-form.php" class="nk-form nk-form-ajax">
-                            <div class="row vertical-gap sm-gap">
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control required" name="email" placeholder="Email *">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control required" name="nom" placeholder="Family Name *">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control required" name="prenom" placeholder="Name *">
-                                </div>
-                                 <div class="col-md-6">
-                                   <select class="form-control" name="type">
-                                     <option value="" disabled selected>Select Reclamtion type</option>
-                                     <option value="About the service Quality">About the service Quality</option>
-                                     <option value="Problem of the product">Problem of the product</option>
-                                     <option value="Switch Product">Switch Product</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="nk-gap"></div>
-                            <textarea class="form-control required" name="description" rows="5" placeholder="Your Reclamation *"></textarea>
-                            <div class="nk-gap-1"></div>
-                            <button class="nk-btn nk-btn-rounded nk-btn-color-white">
-                                <span>Reclame</span>
-                                <span class="icon"><i class="ion-paper-airplane"></i></span>
-                            </button>
-                            <div class="nk-form-response-success"></div>
-                            <div class="nk-form-response-error"></div>
-                        </form>
-                    </div>
-                </div>
-                </form>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- END: reclamer Modal -->
- 
+    
+
+    
 <!-- START: Scripts -->
 
 <!-- Object Fit Polyfill -->
