@@ -1,27 +1,25 @@
-<?php
+ <?php
 include "../config.php";
-class teamc
+class ArticleC
 {
 
-function ajouterTeam($team){
-    $sql="insert into teams (nom,game,nbr,mail,description,names) values (:nom,:game,:nbr,:mail,:description,:names)";
+function ajouterarticle($article){
+   
+    $sql="insert into orders (avater,type,date,description) values (:avatar,:type,:date,:description)";
     $db = config::getConnexion();
     try{
         $req=$db->prepare($sql);
 
-        $nom=$team->getnom();
-        $game=$team->getgame();
-        $nbr=$team->getnbr();
-        $mail=$team->getmail();
-        $description=$team->getdescription();
-        $names=$team->getnames();
-    
-    $req->bindValue(':nom',$nom);
-    $req->bindValue(':game',$game);
-    $req->bindValue(':nbr',$nbr);
-    $req->bindValue(':mail',$mail);
-    $req->bindValue(':description',$description);
-    $req->bindValue(':names',$names);
+        $avatar=$article->getavatar();
+        $type=$article->gettype();
+        $date=$article->getdate();
+        $description=$article->getdescription();
+
+       
+        $req->bindValue(':avatar',$avatar);
+        $req->bindValue(':type',$type);
+        $req->bindValue(':date',$date);
+        $req->bindValue(':description',$description);
     
             $req->execute();
            
@@ -31,7 +29,7 @@ function ajouterTeam($team){
         }
     
   }
-  function showteam ($team){
+  /*function showteam ($team){
         echo "nom: ".$team->getnom()."<br>";
         echo "game: ".$team->getgame()."<br>";
         echo "nbr: ".$team->getnbr()."<br>";
@@ -68,7 +66,7 @@ function deleteteam($nom){
             die('Erreur: '.$e->getMessage());
         }
     }
-
+*/
 } 
 
  ?>
