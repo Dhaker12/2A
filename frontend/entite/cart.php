@@ -8,12 +8,12 @@ class cart
       private $quantite;
       
 
-  function __construct($login,$nom,$prix,$quantite)
+  function __construct($login,$nom,$prix)
   {
-    $this->login = $login;
-    $this->nom = $nom;
-    $this->prix = $prix;
-    $this->quantite = $quantite;
+    $this->login=$login;
+    $this->nom=$nom;
+    $this->prix=$prix;
+    
   
   }
   function getlogin (){return $this->login;}
