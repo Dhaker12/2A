@@ -1,8 +1,11 @@
+
 <?PHP
+session_start(); 
 include "../core/cartC.php";
 $cart1C=new cartC();
-$list=$cart1C->showcarts(); 
-$list1=$cart1C->showcarts(); 
+$login=$_SESSION["fname"]; 
+$list=$cart1C->showcarts($login); 
+$list1=$cart1C->showcarts($login); 
 $q='0';
 $t='0';
 ?>
@@ -144,9 +147,28 @@ $t='0';
                 
                 
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#modalLogin">
-                        <span class="fa fa-user"></span>
+                    <a href="#" data-toggle="modal" >
+                       
                     </a>
+                    <span class="nk-cart-toggle">
+                        <span class="fa fa-user"></span>
+                    </span>
+                    <div class="nk-cart-dropdown">
+                        
+                        <div class="nk-widget-post">
+                            
+                            <h3 class="nk-post-title">
+                                <a >Wellcome <?php echo $_SESSION['lname']; ?></a><br>
+                                <a href="account.php">My account</a><br>
+                                
+                              
+                                
+                                <a href="wishlist.php">Wish list</a><br>
+                                <a href="index.html">Logout</a>
+                            </h3>
+                            <div class="nk-gap-1"></div>
+                        </div>
+                    </div>
                 </li>
                 
                 
@@ -393,7 +415,7 @@ $t='0';
             </a>
         </li>
         <li class="active">
-            <a href="store-cart.html">
+            <a href="store-cart.php">
                 Cart
                 
             </a>
@@ -482,18 +504,24 @@ $t='0';
 <div class="container">
     <div class="nk-store nk-store-cart">
         <div class="table-responsive">
-<form method="POST" action="modifierq.php">
+
            <!-- START: Products in Cart -->
-            <table class="table nk-store-cart-products">
-                <tbody>
+
                       <?PHP
+
                       foreach($list1 as $row)
+                             
                             {
                                 foreach($list as $row){
                                                
                              $q=$row['quantite']+$q;
                              $t=($row['prix']*$row['quantite'])+$t;                       
                         ?>
+            <table class="table nk-store-cart-products">
+                   <form method="POST" action="modifierq.php">
+                <tbody>
+                   
+                      
                         <tr>
                             
                             <td class="nk-product-cart-title">
@@ -526,46 +554,27 @@ $t='0';
                                 <strong><?PHP echo $row['prix']*$row['quantite']; ?></strong>
                             </td>
                              </tr>
+
                   </tbody>
- <?php 
-                                } }?>
+
             </table>
+             <?php 
+                                } }?>
             <!-- END: Products in Cart -->
-
-        </div>
-
         <div class="nk-gap-1"></div>
         <input type="submit" name="" value="Update Cart"></input>
        
         </form>
+        </div>
+
+       
         <div class="clearfix"></div>
         <div class="nk-gap-2"></div>
         <div class="row vertical-gap">
             <div class="col-md-6">
 
                 <!-- START: Calculate Shipping -->
-                <h3 class="nk-title h4">Calculate Shipping</h3>
-                <form action="#" class="nk-form">
-                    <label for="country-sel">Country <span class="text-main-1">*</span>:</label>
-                    <select name="country" class="form-control required" id="country-sel">
-                        <option value="">Select a country...</option>
-                    </select>
-
-                    <div class="nk-gap-1"></div>
-                    <div class="row vertical-gap">
-                        <div class="col-sm-6">
-                            <label for="state">State / Country <span class="text-main-1">*</span>:</label>
-                            <input type="text" class="form-control required" name="state" id="state">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="zip">Postcode / ZIP <span class="text-main-1">*</span>:</label>
-                            <input type="tel" class="form-control required" name="zip" id="zip">
-                        </div>
-                    </div>
-
-                    <div class="nk-gap-1"></div>
-                    <a class="nk-btn nk-btn-rounded nk-btn-color-white float-right" href="#">Update Totals</a>
-                </form>
+              
                 <!-- END: Calculate Shipping -->
 
             </div>
@@ -761,13 +770,13 @@ $t='0';
                 <h4 class="mb-0"><span class="text-main-1">Sign</span> In</h4>
 
                 <div class="nk-gap-1"></div>
-                <form action="#" class="nk-form text-white">
+                <form method="POST" action="connexion.php"class="nk-form text-white">
                     <div class="row vertical-gap">
                         <div class="col-md-6">
                             Use email and password:
 
                             <div class="nk-gap"></div>
-                            <input type="email" value="" name="email" class=" form-control" placeholder="Email">
+                            <input type="login" value="" name="login" class=" form-control" placeholder="Login">
 
                             <div class="nk-gap"></div>
                             <input type="password" value="" name="password" class="required form-control" placeholder="Password">

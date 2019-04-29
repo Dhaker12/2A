@@ -10,6 +10,7 @@
     Copyright 2018.
 -->
     
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -175,7 +176,7 @@
                         
                         <div class="nk-gap-2"></div>
                         <div class="text-center">
-                            <a href="store-checkout.html" class="nk-btn nk-btn-rounded nk-btn-color-main-1 nk-btn-hover-color-white">Proceed to Checkout</a>
+                            <a href="store-checkout.php" class="nk-btn nk-btn-rounded nk-btn-color-main-1 nk-btn-hover-color-white">Proceed to Checkout</a>
                         </div>
                     </div>
                 </li>
@@ -349,10 +350,47 @@
                     </ul>
         </li>
         <li class=" nk-drop-item">
-            <a href="affproduit.php">
+            <a href="store.html">
+                Store
+                
+            </a><ul class="dropdown">
+                        
+        <li>
+            <a href="store.html">
                 Store
                 
             </a>
+        </li>
+        <li>
+            <a href="store-product.html">
+                Product
+                
+            </a>
+        </li>
+        <li>
+            <a href="store-catalog.html">
+                Catalog
+                
+            </a>
+        </li>
+        <li>
+            <a href="store-catalog-alt.html">
+                Catalog Alt
+                
+            </a>
+        </li>
+        <li>
+            <a href="store-checkout.php">
+                Checkout
+                
+            </a>
+        </li>
+        <li>
+            <a href="store-cart.php">
+                Cart
+                
+            </a>
+        </li>
                     </ul>
         </li>
                 </ul>
@@ -1941,7 +1979,7 @@
                 <h4 class="mb-0"><span class="text-main-1">Sign</span> In</h4>
 
                 <div class="nk-gap-1"></div>
-                <form action="#" class="nk-form text-white">
+                <form class="nk-form text-white" method="POST" action="seeif.php">
                     <div class="row vertical-gap">
                         <div class="col-md-6">
                             Use email and password:
@@ -1968,14 +2006,16 @@
                     <div class="nk-gap-1"></div>
                     <div class="row vertical-gap">
                         <div class="col-md-6">
-                            <a href="#" class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Sign In</a>
+                            <div class="action">
+                            <input class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block" type="submit" name="supprimer" value="sign in"></div>
+                            <!--<a  class="nk-btn nk-btn-rounded nk-btn-color-white nk-btn-block">Sign In</a>!-->
                         </div>
                         <div class="col-md-6">
                             <div class="mnt-5">
                                 <small><a href="#">Forgot your password?</a></small>
                             </div>
                             <div class="mnt-5">
-                                <small><a href="#">Not a member? Sign up</a></small>
+                                <small><a href="checkout.php">Not a member? Sign up</a></small>
                             </div>
                         </div>
                     </div>

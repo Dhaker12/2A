@@ -1,14 +1,5 @@
-<?PHP
-session_start();
-include "../core/cartC.php";
-$login=$_SESSION["fname"]; 
-$cart1C=new cartC();
-$list=$cart1C->showcarts($login); 
-$list1=$cart1C->showcarts($login);
-$list2=$cart1C->showcarts($login);  
-$q='0';
-$t='0';
-$c='0';
+<?php session_start(); 
+
 ?>
 <!DOCTYPE html>
 <!--
@@ -27,7 +18,7 @@ $c='0';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>GoodGames | Checkout</title>
+    <title>GoodGames | Game Forum</title>
 
     <meta name="description" content="GoodGames - Bootstrap template for communities and games store">
     <meta name="keywords" content="game, gaming, template, HTML template, responsive, Bootstrap, premium">
@@ -148,7 +139,7 @@ $c='0';
                 
                 
                 <li>
-                   <a href="#" data-toggle="modal" >
+                    <a href="#" data-toggle="modal" >
                        
                     </a>
                     <span class="nk-cart-toggle">
@@ -159,7 +150,9 @@ $c='0';
                         <div class="nk-widget-post">
                             
                             <h3 class="nk-post-title">
+
                                 <a >Wellcome <?php echo $_SESSION['lname']; ?></a><br>
+                                <a > <br> </a>
                                 <a href="account.php">My account</a><br>
                                 
                               
@@ -237,7 +230,7 @@ $c='0';
                 
                 <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
                     
-        <li class=" nk-drop-item">
+        <li class="active nk-drop-item">
             <a href="elements.html">
                 Features
                 
@@ -249,13 +242,13 @@ $c='0';
                 
             </a>
         </li>
-        <li class=" nk-drop-item">
+        <li class="active nk-drop-item">
             <a href="forum.html">
                 Forum
                 
             </a><ul class="dropdown">
                         
-        <li>
+        <li class="active">
             <a href="forum.html">
                 Forum
                 
@@ -379,7 +372,7 @@ $c='0';
         </li>
                     </ul>
         </li>
-        <li class="active nk-drop-item">
+        <li class=" nk-drop-item">
             <a href="store.html">
                 Store
                 
@@ -409,7 +402,7 @@ $c='0';
                 
             </a>
         </li>
-        <li class="active">
+        <li>
             <a href="store-checkout.php">
                 Checkout
                 
@@ -482,22 +475,12 @@ $c='0';
     <ul class="nk-breadcrumbs">
         
         
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index-c.html">Home</a></li>
         
         
         <li><span class="fa fa-angle-right"></span></li>
         
-        <li><a href="store.html">Store</a></li>
-        
-        
-        <li><span class="fa fa-angle-right"></span></li>
-        
-        <li><a href="store-cart.php">Cart</a></li>
-        
-        
-        <li><span class="fa fa-angle-right"></span></li>
-        
-        <li><span>Checkout</span></li>
+        <li><span>Account</span></li>
         
     </ul>
 </div>
@@ -507,184 +490,39 @@ $c='0';
         
 
         
-<div class="container">
+    <div class="container">
 
-    <div class="nk-store nk-store-checkout">
-        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Billing</span> Details</span></h3>
-
-        <!-- START: Billing Details -->
-        <div class="nk-gap"></div>
-        <form action="#" class="nk-form">
-            <div class="row vertical-gap">
-                <div class="col-lg-6">
-                    <div class="row vertical-gap">
-                        <div class="col-sm-6">
-                            <label for="fname">First Name <span class="text-main-1">*</span>:</label>
-                            <input type="text" class="form-control required" name="fname" id="fname" value=" <?php echo $_SESSION['fname'] ?>">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="lname">Last Name <span class="text-main-1">*</span>:</label>
-                            <input type="text" class="form-control required" name="lname" id="lname" value=" <?php echo $_SESSION['lname'] ?>">
-                        </div>
-                    </div>
-
-                    <div class="nk-gap-1"></div>
-                    <label for="company">Company Name:</label>
-                    <input type="text" class="form-control" name="company" id="company" value=" <?php echo $_SESSION['companyname'] ?>">
-
-                    <div class="nk-gap-1"></div>
-                    <div class="row vertical-gap">
-                        <div class="col-sm-6">
-                            <label for="email">Email Address <span class="text-main-1">*</span>:</label>
-                            <input type="email" class="form-control required" name="email" id="email" value=" <?php echo $_SESSION['login'] ?>">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="phone">Phone <span class="text-main-1">*</span>:</label>
-                            <input type="tel" class="form-control required" name="phone" id="phone" value=" <?php echo $_SESSION['phone'] ?>">
-                        </div>
-                    </div>
-
-                    <div class="nk-gap-1"></div>
-                    <label for="country-sel">Country <span class="text-main-1">*</span>:</label>
-                    <select name="country" class="form-control required" id="country-sel" value="<?php echo $_SESSION['country'] ?>">
-                        <option value="">Select a country...</option>
-                    </select>
+        <!-- START: Forums List -->
+        <ul class="nk-forum">
+            <li>
+                
+                <div class="nk-forum-title">
+                    <h3><a >Email</a></h3>
+                    <div class="nk-forum-title-sub"><?php echo $_SESSION['login']; ?></div>
                 </div>
-                <div class="col-lg-6">
-                    <label for="address">Address <span class="text-main-1">*</span>:</label>
-                    <input type="text" class="form-control required" name="address" id="address" value="<?php echo $_SESSION['address'] ?>" >
-
-                    <div class="nk-gap-1"></div>
-                    <label for="city">Town / City <span class="text-main-1">*</span>:</label>
-                    <input type="text" class="form-control required" name="city" id="city" value=" <?php echo $_SESSION['town'] ?>">
-
-                    <div class="nk-gap-1"></div>
-                    <div class="row vertical-gap">
-                        <div class="col-sm-6">
-                            <label for="state">State / Country <span class="text-main-1">*</span>:</label>
-                            <input type="text" class="form-control required" name="state" id="state" value=" <?php echo $_SESSION['state'] ?>">
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="zip">Postcode / ZIP <span class="text-main-1">*</span>:</label>
-                            <input type="tel" class="form-control required" name="zip" id="zip" value=" <?php echo $_SESSION['postcode'] ?>">
-                        </div>
-                    </div>
-
-                    <div class="nk-gap-1"></div>
-                    <label class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input">
-                        <span class="custom-control-indicator"></span>
-                        Ship to different address?
-                    </label>
+               
+            </li>
+            <li class="nk-forum-title">
+                <div class="nk-forum-title">
+                    <h3><a >phone</a></h3>
+                    <div class="nk-forum-title-sub"><?php echo $_SESSION['phone']; ?></div>
                 </div>
-            </div>
-        </form>
-        <!-- END: Billing Details -->
-
-        <div class="nk-gap-2"></div>
-        <form action="#" class="nk-form">
-            <div class="nk-gap-1"></div>
-            <label for="notes">Order Notes:</label>
-            <textarea class="form-control" name="notes" id="notes" placeholder="Order Notes" rows="6"></textarea>
-        </form>
-
-        <!-- START: Order Products -->
-          
-        <div class="nk-gap-3"></div>
-        <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Your</span> Order</span></h3>
-        <div class="nk-gap"></div>
-        <div class="table-responsive">
-       
-            <table class="nk-table nk-table-sm">
-                <thead class="thead-default">
-                    <tr>
-                        <th class="nk-product-cart-title">Product</th>
-                        <th class="nk-product-cart-total">Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                 
-                        <tr>
-                            <td class="nk-product-cart-title">
-                                Quantité
-                            </td>
-                            <td class="nk-product-cart-total">
-                                <?PHP
- 
-
-                                            foreach($list as $row){
-                                               
-                                                $q=$row['quantite']+$q;
-                                             
-
-                                          } 
-                                             echo $q;   
-                                        ?>
-                            </td>
-                        </tr>
-                    
-                    <tr >
-                        <td class="nk-store-cart-totals-subtotal">
-                            Subtotal
-                        </td>
-                        <td class="nk-product-cart-total">
-                              <?PHP
- 
-
-                                            foreach($list2 as $row){
-                                               
-                                                $c=$row['prix']*$row['quantite']+$c;
-                                             
-
-                                          } 
-                                             echo $c;   
-                                        ?>
-                        </td>
-                    </tr>
-                    <tr class="nk-store-cart-totals-shipping">
-                        <td>
-                            Shipping
-                        </td>
-                        <td>
-                            Free Shipping
-                        </td>
-                    </tr>
-                    <tr class="nk-store-cart-totals-total">
-                        <td>
-                            Total
-                        </td>
-                        <td>
-                           <?PHP
- 
-
-                                            foreach($list1 as $row){
-                                               
-                                                $t=$row['prix']*$row['quantite']+$t;
-                                             
-
-                                          } 
-                                             echo $t;   
-                                        ?>
-                        </td>
-                    </tr>
-                     
-                </tbody>
-            </table>
-              
-            <div class="submit">
-                <a href="ordermail.php?login=<?PHP echo $row['login']; ?>"><input type="button" value="place order"></a>
-</div>
-</div>
-
-        </div>
-        <!-- END: Order Products -->
-
-        <div class="nk-gap-2"></div>
-        
+            </li>
+           <li class="nk-forum-title">
+                <div class="nk-forum-title">
+                    <h3><a >full name</a></h3>
+                    <div class="nk-forum-title-sub"><?php echo $_SESSION['fname']; echo  "  " ;echo $_SESSION['lname'] ; ?></div>
+                </div>
+            </li>
+           
+        </ul>
+        <!-- END: Forums List -->
+ <div class="nk-gap-2"></div>
+        <a class="nk-btn nk-btn-rounded nk-btn-color-main-1" href="modifierclient.html" >modify your information</a>
     </div>
-</div>
+    </div>
 
-<div class="nk-gap-2"></div>
+    <div class="nk-gap-2"></div>
 
 
         
@@ -820,7 +658,7 @@ $c='0';
     
         <!-- START: Page Background -->
 
-    <img class="nk-page-background-top" src="assets/images/bg-top-4.png" alt="">
+    <img class="nk-page-background-top" src="assets/images/bg-top.png" alt="">
     <img class="nk-page-background-bottom" src="assets/images/bg-bottom.png" alt="">
 
 <!-- END: Page Background -->

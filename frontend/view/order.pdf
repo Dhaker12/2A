@@ -1,0 +1,103 @@
+<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: include(../order.php): failed to open stream: No such file or directory in C:\wamp64\www\octopus\views\imprimer.php on line <i>3</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>403400</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp64\www\octopus\views\imprimer.php' bgcolor='#eeeeec'>...\imprimer.php<b>:</b>0</td></tr>
+</table></font>
+<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: include(): Failed opening '../order.php' for inclusion (include_path='.;C:\php\pear') in C:\wamp64\www\octopus\views\imprimer.php on line <i>3</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>403400</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp64\www\octopus\views\imprimer.php' bgcolor='#eeeeec'>...\imprimer.php<b>:</b>0</td></tr>
+</table></font>
+%PDF-1.3
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Contents 4 0 R>>
+endobj
+4 0 obj
+<</Filter /FlateDecode /Length 442>>
+stream
+xœ•½NÃ0F÷>ÅaèÅ¾þ‰ÍˆbAä"š¢"HÕ4âíq;×^2¤ß=þrìÊ+†ª‚¯Õ]78!cPoá¾^€¡4z|
+;>™„þ\Rpä´!ê\ÁÓî8À~û~ÓöÇ[¸†úÝ1àyÓL…-Jí(È¬§w}/0®Ë\8^Šj{^ªo·mßv¯mXÂê±‡ç…®g’g-Å¼®ùŒPÜp”4³*†¦J³¸‘H:†mš!‚‘"$;Ã8è<&i¤òEµã°À	í~©JqÂ‰U<ÆNM7ìb¢¬,2]J”ÎYìÅ°š€S–PÊRœ²
+É,ìýùà‚²
+yNsH$§-.IúŒ¢Ä¸]3¹v€ÄŒß¦h¦o›Íw*î·!nS¥²^p\‡\½DÚû‹Ò§îr•É ¶çâØ„e†h›¤ÎCö×¡È93¹êÞb9‰!jLNayI¡d¨Õ¤0ù^aˆæ†l¹Â0S¨0¨œÂ¨Iúž–™ºAøc˜d{‡!šw²åÃL¡Ã0<Z³Ã(šwx©Èù`Ã5úê#¸
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R ]
+/Count 1
+/MediaBox [0 0 595.28 841.89]
+>>
+endobj
+5 0 obj
+<</Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+6 0 obj
+<</Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+7 0 obj
+<</Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+/F3 7 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+8 0 obj
+<<
+/Producer (FPDF 1.7)
+/CreationDate (D:20190423092049)
+>>
+endobj
+9 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+>>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000599 00000 n 
+0000000982 00000 n 
+0000000009 00000 n 
+0000000087 00000 n 
+0000000686 00000 n 
+0000000785 00000 n 
+0000000883 00000 n 
+0000001106 00000 n 
+0000001181 00000 n 
+trailer
+<<
+/Size 10
+/Root 9 0 R
+/Info 8 0 R
+>>
+startxref
+1230
+%%EOF

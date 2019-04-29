@@ -1,6 +1,5 @@
-<?php
+<?php session_start(); 
 
-require_once('session-verif.php')
 ?>
 <!DOCTYPE html>
 <!--
@@ -151,9 +150,11 @@ require_once('session-verif.php')
                         <div class="nk-widget-post">
                             
                             <h3 class="nk-post-title">
+                                <a >Wellcome <?php echo $_SESSION['lname']; ?></a><br>
+                                <a href="account.php">My account</a><br>
                                 
-                                <a href="#">My account</a><br>
-                                <a href="#"> email <?php echo $login ?></a><br>
+                              
+                                
                                 <a href="wishlist.php">Wish list</a><br>
                                 <a href="index.html">Logout</a>
                             </h3>
@@ -196,7 +197,7 @@ require_once('session-verif.php')
                         
                         <div class="nk-gap-2"></div>
                         <div class="text-center">
-                            <a href="store-checkout.html" class="nk-btn nk-btn-rounded nk-btn-color-main-1 nk-btn-hover-color-white">Proceed to Checkout</a>
+                            <a href="store-checkout.php" class="nk-btn nk-btn-rounded nk-btn-color-main-1 nk-btn-hover-color-white">Proceed to Checkout</a>
                         </div>
                     </div>
                 </li>
@@ -370,13 +371,13 @@ require_once('session-verif.php')
                     </ul>
         </li>
         <li class=" nk-drop-item">
-            <a href="store-c.html">
+            <a href="affproduit.php">
                 Store
                 
             </a><ul class="dropdown">
                         
         <li>
-            <a href="store-c.html">
+            <a href="affproduit.php">
                 Store
                 
             </a>
@@ -400,13 +401,13 @@ require_once('session-verif.php')
             </a>
         </li>
         <li>
-            <a href="store-checkout.html">
+            <a href="store-checkout.php">
                 Checkout
                 
             </a>
         </li>
         <li>
-            <a href="store-cart.html">
+            <a href="store-cart.php">
                 Cart
                 
             </a>
