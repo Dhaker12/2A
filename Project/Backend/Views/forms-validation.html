@@ -540,6 +540,11 @@
 													 Product
 												</a>
 											</li>
+											<li>
+												<a href="review.php">
+													 Reviews
+												</a>
+											</li>
 
 										</ul>
 									</li>
@@ -686,7 +691,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Adding a product</h2>
+						<h2>Managing Products</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -695,8 +700,8 @@
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>STORE </span></li>
-								<li><span>ADD</span></li>
+								<li><span>Store </span></li>
+								<li><span>Manager</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -771,12 +776,24 @@
 												<label class="error" for="cathegory"></label>
 											</div>
 										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Quantity <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="number" name="quantite" class="form-control" title="Please enter the quantity." placeholder="quantite de produit "min="0" max="100000"required/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-3 control-label">Guarantee <span class="required">*</span></label>
+											<div class="col-sm-9">
+												<input type="number" name="garantie" class="form-control" title="Please enter the Guarantee duration." placeholder="Nombre de mois de garantie "min="0" max="100000"required/>
+											</div>
+										</div>
 
 											<div class="form-group">
-										<label class="col-sm-3 control-label">The Album</label>
+											<label class="col-sm-3 control-label">The Album</label>
 											<div class="col-sm-9"><input type="file" id="file-multiple-input" name="photo" multiple="" class="form-control-file">
                                             </div>
-                                    </div>
+                                   			</div>
 										</div>
 										
 									</div>

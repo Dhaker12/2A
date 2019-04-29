@@ -17,13 +17,11 @@ class ProduitCore
 		foreach ($db->query($sql) as $row) {
 			echo'<div class="col-lg-6">
             <div class="nk-product-cat-2">
-                <a class="nk-product-image" href="store-product.html">
+                <a class="nk-product-image" href="product.php">
                     <img style="width:250px;heigth:345px;"src="data:image/jpeg;base64,'.base64_encode(stripslashes($row['photo'])).'">
                 </a>
                 <div class="nk-product-cont">
-                    <h3 class="nk-product-title h5"><a href="store-product.html">'.$row['nom'].'</a></h3>
-                    <div class="nk-gap-1"></div>
-                    <div class="nk-product-rating" data-rating="3.5"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fas fa-star-half"></i> <i class="far fa-star"></i></div>
+                    <h3 class="nk-product-title h5"><a href="product.php">'.$row['nom'].'</a></h3>
                     <div class="nk-gap-1"></div>
                     '.$row['description'].'
                     <div class="nk-gap-2"></div>

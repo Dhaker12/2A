@@ -7,9 +7,11 @@ class Produit
 	private $Description;
 	private $Photo;
 	private $Cathegory;
+	private $quantite;
+	private $garantie;
 	
 
-	 function __construct($nom,$reference,$prix,$description,$cathegory,$photo){
+	 function __construct($nom,$reference,$prix,$description,$cathegory,$quantite,$garantie,$photo){
 	 
 	 	
 
@@ -19,6 +21,8 @@ class Produit
 	 	$this->Prix=$prix;
 	 	$this->Description=$description;
 	 	$this->Cathegory=$cathegory; 
+	 	$this->Quantite=$quantite; 
+	 	$this->Garantie=$garantie; 
 	 	$this->Photo=$photo; 
 	 	
 
@@ -53,6 +57,16 @@ class Produit
 	 {
 	 	return $this->Cathegory;
 	 }
+	 function getQuantite()
+	 {
+	 	return $this->Quantite;
+	 }
+	 function getGarantie()
+	 {
+	 	return $this->Garantie;
+	 }
+
+
 	 function setReference($reference)
 	 {
 	 	$this->Reference = $reference;
@@ -79,6 +93,14 @@ class Produit
 	 function setPhoto($photo)
 	 {
 	 	$this->Photo = $photo;
+	 }
+	 function setQuantite($quantite)
+	 {
+	 	$this->Quantite = $quantite;
+	 }
+	 function setGarantie($garantie)
+	 {
+	 	$this->Garantie = $garantie;
 	 }
 
 	

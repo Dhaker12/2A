@@ -1,10 +1,9 @@
 <?php
 include "../config.php";
-//include "../entite/reclamation.php";
 class reclamationc {
 
 	function ajouterReclamation($reclamation){
-		$sql="insert into reclamation (numero,nom,prenom,email,description,etat,date) values (:numero,:nom,:prenom,:email,:description,:etat,:date)";
+		$sql="insert into reclamation (numero,nom,prenom,email,type,description,etat,date) values (:numero,:nom,:prenom,:email,:type,:description,:etat,:date)";
 		$db = config::getConnexion();
 		try{
         $req=$db->prepare($sql);
@@ -13,6 +12,7 @@ class reclamationc {
         $etat=$reclamation->getEtat();
         $date=$reclamation->getDate();
         $email=$reclamation->getemail();
+        $type=$reclamation->getType();
         $description=$reclamation->getDescription();
         $nom=$reclamation->getNom();
         $prenom=$reclamation->getPrenom();
@@ -24,6 +24,7 @@ class reclamationc {
 		$req->bindValue(':prenom',$prenom);
 		$req->bindValue(':etat',$etat);
 		$req->bindValue(':email',$email);
+		$req->bindValue(':type',$type);
         $req->execute();
             return true ;
            

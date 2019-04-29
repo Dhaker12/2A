@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -7,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Basic Tables | Okler Themes | Porto-Admin</title>
+		<title>Widgets | Okler Themes | Porto-Admin</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -23,6 +21,12 @@
 		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css" />
 		<link rel="stylesheet" href="assets/vendor/magnific-popup/magnific-popup.css" />
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
+
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+		<link rel="stylesheet" href="assets/vendor/morris/morris.css" />
+		<link rel="stylesheet" href="assets/vendor/owl-carousel/owl.carousel.css" />
+		<link rel="stylesheet" href="assets/vendor/owl-carousel/owl.theme.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -693,7 +697,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Products</h2>
+						<h2>Reviews</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -703,7 +707,7 @@
 									</a>
 								</li>
 								<li><span>Store</span></li>
-								<li><span>Product</span></li>
+								<li><span>Reviews</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -711,62 +715,23 @@
 					</header>
 
 					<!-- start: page -->
-						<div class="row">
-							<div class="col-md-6" style="width: 100%;">
-								<section style="width: 100%;" class="panel">
-									<header class="panel-heading">
-										<div class="panel-actions">
-											<a href="#" class="fa fa-caret-down"></a>
-											<a href="#" class="fa fa-times"></a>
-										</div>
-										
-										<h2 class="panel-title">Product's Table</h2>
-									</header>
-									<br>							<div class="form-group">
-											<label class="col-sm-3 control-label"><span class="search"></span></label>
-											<div class="col-sm-9">
-												<input type="text" id="myInput" onkeyup="myFunction()" name="" class="form-control" title="Plase enter a numero." placeholder="searching" />
-											</div>
-										</div>
-									<div class="panel-body">
-										<div class="table-responsive">
-											<table class="table mb-none" id="myTable">
-												<thead>
-													<tr>
-														<th>#</th>
-														<th>Nom</th>
-														<th>Reference</th>
-														<th>Prix</th>
-														<th>Description</th>
-														<th>Cathegory</th>
-														<th>Quantite</th>
-														<th>Garantie</th>
-														<th>Photo</th>
-													</tr>
-												</thead>
-												<tbody>
-													
-													<?PHP
-															include "../core/produitCore.php";
-															$produitC=new ProduitCore();
-															$listeproduit=$produitC->afficherProduit();
-													?>
-												
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</section>
-							</div>
-							
+						
+						
+						<div class="row" >						
+							<div class="col-md-12 col-lg-6">
+                                    <div class="col-md-12">	
+                                    <table>	
+                                    	<td>
+									<?PHP
+                                    include "../core/reviewCore.php";
+                                    $review1core=new ReviewCore();
+                                    $review1core->afficherReview();
+                               		?>
+                               			</td>
+                               		</table>		
+                               		</div>
+               				</div>
 						</div>
-						
-						
-						
-						
-						
-						
 					<!-- end: page -->
 				</section>
 			</div>
@@ -849,6 +814,21 @@
 		<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
+		<!-- Specific Page Vendor -->
+		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+		<script src="assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.js"></script>
+		<script src="assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.pie.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.categories.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.resize.js"></script>
+		<script src="assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+		<script src="assets/vendor/raphael/raphael.js"></script>
+		<script src="assets/vendor/morris/morris.js"></script>
+		<script src="assets/vendor/owl-carousel/owl.carousel.js"></script>
+		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
 		
@@ -858,28 +838,8 @@
 		<!-- Theme Initialization Files -->
 		<script src="assets/javascripts/theme.init.js"></script>
 
+
+		<!-- Examples -->
+		<script src="assets/javascripts/ui-elements/examples.widgets.js"></script>
 	</body>
 </html>
-<script>
-function myFunction() {
-  // Declare variables 
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[2];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-</script>

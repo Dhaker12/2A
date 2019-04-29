@@ -702,7 +702,7 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Editable Tables</h2>
+						<h2>Reclamation</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -711,8 +711,8 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>Tables</span></li>
-								<li><span>Editable</span></li>
+								<li><span>Customer Service</span></li>
+								<li><span>Reclamation</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -746,6 +746,7 @@ $listereclamation=$reclamation1C->afficherReclamation1();
 											<th>E-mail</th>
 											<th>Nom</th>
 											<th>Prenom</th>
+											<th>Type</th>
 											<th>Description</th>
 											<th onclick="sortTable(5)">Etat</th>
 											<th onclick="sortTable(6)">Date</th>
@@ -761,17 +762,18 @@ $listereclamation=$reclamation1C->afficherReclamation1();
   										<td><?PHP echo $row['email']; ?></td>
   										<td><?PHP echo $row['nom']; ?></td>
   										<td><?PHP echo $row['prenom']; ?></td>
+  										<td><?PHP echo $row['type']; ?></td>
   										<td><?PHP echo $row['description']; ?></td>
   										<td><?PHP echo $row['etat']; ?></td>
   										<td><?PHP echo $row['date']; ?></td>
 											<td class="supprimer">
 												<center><form method="POST" action="supprimerreclamation.php">
-  													<input type="submit" name="supprimer" value="supprimer" class="btn btn-danger btn-xs delete">
+  													<input type="submit" class="btn btn-danger" name="supprimer" value="supprimer" class="btn btn-danger btn-xs delete">
   													<input type="hidden" value="<?PHP echo $row['numero']; ?>" name="numero">
   													</form>
   													<br>
   													<form method="POST" action="modifierreclamation.php">
-  												<input type="submit" name="modifier" value="modifier" >
+  												<input type="submit" class="btn btn-warning" name="modifier" value="modifier" >
   													<input type="hidden" value="<?PHP echo $row['numero']; ?>" name="numero">
    													<input type="hidden" value="<?PHP echo $row['etat']; ?>" name="etat">
   													</form>

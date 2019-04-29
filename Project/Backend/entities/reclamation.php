@@ -8,9 +8,10 @@ class Reclamation
 	private $etat;
 	private $nom;
 	private $prenom;
+	private $type;
 	private $email;
 	
-	function __construct($date,$numero,$description,$etat,$nom,$prenom,$email){
+	function __construct($date,$numero,$description,$etat,$nom,$prenom,$type,$email){
 
 		$this->date=$date;
 		$this->numero=$numero;
@@ -18,6 +19,7 @@ class Reclamation
 		$this->etat=$etat;
 		$this->nom=$nom;
 		$this->prenom=$prenom;
+		$this->type=$type;
 		$this->email=$email;
 	}
 	
@@ -43,6 +45,9 @@ class Reclamation
 	function getEtat(){
 		return $this->etat;
 	}
+	function getType(){
+		return $this->type;
+	}
 
 
 	function setDate($date){
@@ -66,6 +71,9 @@ class Reclamation
 	}
 	function setEtat($etat){
 		$this->etat=$etat;
+	}
+	function setType($type){
+		$this->type=$type;
 	}
 	
 	

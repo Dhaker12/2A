@@ -6,7 +6,7 @@ class ProduitCore
 
 	function AjouterProduit($produit)
 	{
-		$sql="insert into produit (nom,reference,prix,description,cathegory,photo) values ( :nom,:reference,:prix,:description,:cathegory,:photo)";
+		$sql="insert into produit (nom,reference,prix,description,cathegory,quantite,garantie,photo) values ( :nom,:reference,:prix,:description,:cathegory,:quantite,:garantie,:photo)";
 		$db = config::getConnexion();
 		try{
         $req=$db->prepare($sql);
@@ -16,6 +16,8 @@ class ProduitCore
         $prix=$produit->getPrix();
         $description=$produit->getDescription();
         $cathegory=$produit->getCathegory();
+        $quantite=$produit->getQuantite();
+        $garantie=$produit->getGarantie();
         $photo=$produit->getPhoto();
 
         $req->bindValue(':nom',$nom);
@@ -23,6 +25,8 @@ class ProduitCore
         $req->bindValue(':prix',$prix);
         $req->bindValue(':description',$description);
         $req->bindValue(':cathegory',$cathegory);
+        $req->bindValue(':quantite',$quantite);
+        $req->bindValue(':garantie',$garantie);
         $req->bindValue(':photo',$photo);
 
 
@@ -52,6 +56,8 @@ class ProduitCore
  														<td>'.$row['prix'].'</td>
   														<td>'.$row['description'].'</td>
   														<td>'.$row['cathegory'].'</td>
+  														<td>'.$row['quantite'].'</td>
+  														<td>'.$row['garantie'].'</td>
   														<td><img style="width:40px;heigth:100px;"src="data:image/jpeg;base64,'.base64_encode(stripslashes($row['photo'])).'"></td>
 													</tr>';
 		}
@@ -116,14 +122,6 @@ class ProduitCore
             die('Erreur: '.$e->getMessage());
         }
         }
-
-
-
-
-
-
-
-
 
 }
 ?>
