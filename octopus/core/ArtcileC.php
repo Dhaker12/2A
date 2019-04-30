@@ -4,17 +4,19 @@ class ArticleC
 {
 
 function ajouterarticle($article){
-     $sql="insert into article (avatar,description,type,date) values (:avatar,:description,:type,CURDATE())";
+     $sql="insert into article (name,avatar,image,description,type,date) values (:name,:avatar,:image,:description,:type,CURDATE())";
     $db = config::getConnexion();
     try{
         $req=$db->prepare($sql);
-
+        $name=$article->getname();
         $avatar=$article->getavatar();
+        $image=$article->getimage();
         $description=$article->getdescription();
         $type=$article->gettype();
 
-       
+        $req->bindValue(':name',$name);
         $req->bindValue(':avatar',$avatar);
+        $req->bindValue(':image',$image);
         $req->bindValue(':description',$description);
         $req->bindValue(':type',$type);
     
@@ -27,9 +29,11 @@ function ajouterarticle($article){
     
   }
   function showarticle ($article){
+        echo "name: ".$article->getname()."<br>";
         echo "avatar: ".$article->getavatar()."<br>";
         echo "description: ".$article->getdescription()."<br>";
         echo "type: ".$article->gettype()."<br>";
+
     }
   
 
@@ -94,7 +98,56 @@ function deletearticle($avatar){
         catch (Exception $e){
             die('Erreur: '.$e->getMessage());
         }
+     }
+     function MMO(){
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SELECT COUNT(*) FROM article WHERE type='MMO'";
+        $db = config::getConnexion();
+        try{
+        $list=$db->query($sql);
+        return $list;
         }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+     function Strategy(){
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SELECT COUNT(*) FROM article WHERE type='Strategy'";
+        $db = config::getConnexion();
+        try{
+        $list=$db->query($sql);
+        return $list;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+     function Action(){
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SELECT COUNT(*) FROM article WHERE type='Action'";
+        $db = config::getConnexion();
+        try{
+        $list=$db->query($sql);
+        return $list;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
+
+    function all(){
+        //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
+        $sql="SELECT COUNT(*) FROM article";
+        $db = config::getConnexion();
+        try{
+        $list=$db->query($sql);
+        return $list;
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }   
+    }
 
 }
  
