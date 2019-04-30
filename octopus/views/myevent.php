@@ -331,6 +331,11 @@ $list=$event1C->showevents();
 													 My Games
 												</a>
 											</li>
+											<li>
+												<a href="stats.php">
+													 Article's Stat's
+												</a>
+											</li>
 											
 										</ul>
 									</li>

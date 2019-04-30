@@ -1,3 +1,39 @@
+<?PHP
+session_start(); 
+
+
+include "../core/ArtcileC.php";
+$article1C=new articleC();
+$list=$article1C->showarticles();
+$list1=$article1C->MMO();
+$list2=$article1C->Strategy();
+$list3=$article1C->Action();
+$list4=$article1C->all();
+foreach($list1 as $row){
+$g1= $row['COUNT(*)'];
+}
+foreach($list2 as $row){
+$g2= $row['COUNT(*)'];
+}
+foreach($list3 as $row){
+$g3= $row['COUNT(*)'];
+}
+foreach($list4 as $row){
+$all= $row['COUNT(*)'];
+}
+
+$MMO=($g1*100)/$all;
+$Strategy=($g2*100)/$all;
+$Action=($g3*100)/$all;
+
+$dataPoints = array( 
+    array("label"=>"MMO", "y"=>$MMO),
+    array("label"=>"Strategy", "y"=>$Strategy),
+    array("label"=>"Action", "y"=>$Action),
+
+)
+
+?>
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -5,7 +41,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Sliders | Okler Themes | Porto-Admin</title>
+		<title>Charts | Okler Themes | Porto-Admin</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -23,7 +59,7 @@
 		<link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/datepicker3.css" />
 
 		<!-- Specific Page Vendor CSS -->
-		<link rel="stylesheet" href="assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+		<link rel="stylesheet" href="assets/vendor/morris/morris.css" />
 
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/stylesheets/theme.css" />
@@ -36,6 +72,33 @@
 
 		<!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
+		<script>
+window.onload = function() {
+ 
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+    theme: "light2",
+    animationEnabled: true,
+    title: {
+        text: "stats of registered games"
+    },
+    data: [{
+        type: "pie",
+        indexLabel: "{y}",
+        yValueFormatString: "#,##\"%\"",
+        indexLabelPlacement: "inside",
+        indexLabelFontColor: "#36454F",
+        indexLabelFontSize: 18,
+        indexLabelFontWeight: "bolder",
+        showInLegend: true,
+        legendText: "{label}",
+        dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+    }]
+});
+chart.render();
+ 
+}
+</script>
 
 	</head>
 	<body>
@@ -229,34 +292,33 @@
 			
 					<span class="separator"></span>
 			
-					<div id="userbox" class="userbox">
-						<a href="#" data-toggle="dropdown">
-							<figure class="profile-picture">
-								<img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
-							</figure>
-							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name">John Doe Junior</span>
-								<span class="role">administrator</span>
-							</div>
-			
-							<i class="fa custom-caret"></i>
-						</a>
-			
-						<div class="dropdown-menu">
-							<ul class="list-unstyled">
-								<li class="divider"></li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
-								</li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
-								</li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
-								</li>
-							</ul>
-						</div>
-					</div>
+					<div  class="userbox">
+                        <a href="pages-signin.html" >
+                            
+                            <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
+                                <a href="logout.php"><?php
+
+ 
+// On récupère nos variables de session
+if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+{ 
+
+     echo '<a href="./logout.php">Welcome </a>'.$_SESSION['l'].
+'</br>'; 
+
+}
+
+else {  
+      echo '<a href="index.html"">Cliquer pour se connecter</a>';
+
+} ?></a>
+                            </div>
+            
+                            
+                        </a>
+            
+                        
+                    </div>
 				</div>
 				<!-- end: search & user box -->
 			</header>
@@ -266,20 +328,11 @@
 				<!-- start: sidebar -->
 				<aside id="sidebar-left" class="sidebar-left">
 				
-					<div class="sidebar-header">
-						<div class="sidebar-title">
-							Navigation
-						</div>
-						<div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
-							<i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-						</div>
-					</div>
-				
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
-									<li>
+									<li class="nav-active">
 										<a href="index.html">
 											<i class="fa fa-home" aria-hidden="true"></i>
 											<span>Dashboard</span>
@@ -295,203 +348,76 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-copy" aria-hidden="true"></i>
-											<span>Pages</span>
+											<span>News</span>
 										</a>
 										<ul class="nav nav-children">
-											<li>
-												<a href="pages-signup.html">
-													 Sign Up
-												</a>
-											</li>
-											<li>
-												<a href="pages-signin.html">
-													 Sign In
-												</a>
-											</li>
-											<li>
-												<a href="pages-recover-password.html">
-													 Recover Password
-												</a>
-											</li>
-											<li>
-												<a href="pages-lock-screen.html">
-													 Locked Screen
-												</a>
-											</li>
-											<li>
-												<a href="pages-user-profile.html">
-													 User Profile
-												</a>
-											</li>
-											<li>
-												<a href="pages-session-timeout.html">
-													 Session Timeout
-												</a>
-											</li>
-											<li>
-												<a href="pages-calendar.html">
-													 Calendar
-												</a>
-											</li>
-											<li>
-												<a href="pages-timeline.html">
-													 Timeline
-												</a>
-											</li>
-											<li>
-												<a href="pages-media-gallery.html">
-													 Media Gallery
-												</a>
-											</li>
-											<li>
-												<a href="pages-invoice.html">
-													 Invoice
-												</a>
-											</li>
 											<li>
 												<a href="pages-blank.html">
-													 Blank Page
+													 Article
 												</a>
 											</li>
 											<li>
-												<a href="pages-404.html">
-													 404
+												<a href="article.php">
+													 My Articles
 												</a>
 											</li>
 											<li>
-												<a href="pages-500.html">
-													 500
+												<a href="Event.html">
+													 Events
 												</a>
 											</li>
 											<li>
-												<a href="pages-log-viewer.html">
-													 Log Viewer
+												<a href="myevent.php">
+													 My Events
 												</a>
 											</li>
 											<li>
-												<a href="pages-search-results.html">
-													 Search Results
+												<a href="Games.html">
+													 Games
 												</a>
 											</li>
+											<li>
+												<a href="mygames.php">
+													 My Games
+												</a>
+											</li>
+											<li>
+												<a href="stats.php">
+													 Article's Stat's
+												</a>
+											</li>
+											
 										</ul>
 									</li>
-									<li class="nav-parent nav-expanded nav-active">
+									
+									<li class="nav-parent">
 										<a>
 											<i class="fa fa-tasks" aria-hidden="true"></i>
-											<span>UI Elements</span>
+											<span>Teams</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="ui-elements-typography.html">
-													 Typography
+												<a href="addteam.html">
+													 Add Team
 												</a>
 											</li>
 											<li>
-												<a href="ui-elements-icons.html">
-													 Icons
+												<a href="teamlist.php">
+													 My teams
 												</a>
 											</li>
 											<li>
 												<a href="ui-elements-tabs.html">
-													 Tabs
+													 edit teams
 												</a>
 											</li>
-											<li>
-												<a href="ui-elements-panels.html">
-													 Panels
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-widgets.html">
-													 Widgets
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-portlets.html">
-													 Portlets
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-buttons.html">
-													 Buttons
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-alerts.html">
-													 Alerts
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-notifications.html">
-													 Notifications
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-modals.html">
-													 Modals
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-lightbox.html">
-													 Lightbox
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-progressbars.html">
-													 Progress Bars
-												</a>
-											</li>
-											<li class="nav-active">
-												<a href="ui-elements-sliders.html">
-													 Sliders
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-carousels.html">
-													 Carousels
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-accordions.html">
-													 Accordions
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-nestable.html">
-													 Nestable
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-tree-view.html">
-													 Tree View
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-grid-system.html">
-													 Grid System
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-charts.html">
-													 Charts
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-animations.html">
-													 Animations
-												</a>
-											</li>
-											<li>
-												<a href="ui-elements-extra.html">
-													 Extra
-												</a>
-											</li>
+											
 										</ul>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-list-alt" aria-hidden="true"></i>
-											<span>Forms</span>
+											<span>Players</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -529,7 +455,7 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-table" aria-hidden="true"></i>
-											<span>Tables</span>
+											<span>Products</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -567,58 +493,35 @@
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-map-marker" aria-hidden="true"></i>
-											<span>Maps</span>
+											<span>Orders</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
-												<a href="maps-google-maps.html">
-													 Basic
+												<a href="eya.php">
+													 List
 												</a>
 											</li>
-											<li>
-												<a href="maps-google-maps-builder.html">
-													 Map Builder
-												</a>
-											</li>
-											<li>
-												<a href="maps-vector.html">
-													 Vector
-												</a>
-											</li>
+											
 										</ul>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-columns" aria-hidden="true"></i>
-											<span>Layouts</span>
+											<span>Carts</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
 												<a href="layouts-default.html">
-													 Default
+													 List
 												</a>
 											</li>
-											<li>
-												<a href="layouts-boxed.html">
-													 Boxed
-												</a>
-											</li>
-											<li>
-												<a href="layouts-menu-collapsed.html">
-													 Menu Collapsed
-												</a>
-											</li>
-											<li>
-												<a href="layouts-scroll.html">
-													 Scroll
-												</a>
-											</li>
+											
 										</ul>
 									</li>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-align-left" aria-hidden="true"></i>
-											<span>Menu Levels</span>
+											<span>Clients</span>
 										</a>
 										<ul class="nav nav-children">
 											<li>
@@ -648,8 +551,95 @@
 											</li>
 										</ul>
 									</li>
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-columns" aria-hidden="true"></i>
+											<span>Tournaments</span>
+										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="#">
+													 ayoub
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Boxed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Menu Collapsed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Scroll
+												</a>
+											</li>
+										</ul>
+									</li>
+
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-columns" aria-hidden="true"></i>
+											<span>Customer service</span>
+										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="#">
+													 Default
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Boxed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Menu Collapsed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Scroll
+												</a>
+											</li>
+										</ul>
+									</li>
+									
+									<li class="nav-parent">
+										<a>
+											<i class="fa fa-columns" aria-hidden="true"></i>
+											<span>Feedback</span>
+										</a>
+										<ul class="nav nav-children">
+											<li>
+												<a href="#">
+													 esfe
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Boxed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Menu Collapsed
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													 Scroll
+												</a>
+											</li>
+										</ul>
+									</li>
 									<li>
-										<a href="http://themeforest.net/item/porto-responsive-html5-template/4106987?ref=Okler" target="_blank">
+										<a href="../../dist/index.html" target="_blank"> 
+
 											<i class="fa fa-external-link" aria-hidden="true"></i>
 											<span>Front-End <em class="not-included">(Not Included)</em></span>
 										</a>
@@ -721,7 +711,7 @@
 
 				<section role="main" class="content-body">
 					<header class="page-header">
-						<h2>Sliders</h2>
+						<h2>Charts</h2>
 					
 						<div class="right-wrapper pull-right">
 							<ol class="breadcrumbs">
@@ -731,7 +721,7 @@
 									</a>
 								</li>
 								<li><span>UI Elements</span></li>
-								<li><span>Sliders</span></li>
+								<li><span>Charts</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -739,178 +729,28 @@
 					</header>
 
 					<!-- start: page -->
-
 					<div class="row">
-						<div class="col-md-6">
-							<section class="panel">
-								<div class="panel-body">
-
-									<div class="m-lg"                data-plugin-slider data-plugin-options='{ "value": 50, "max": 100 }'></div>
-									<div class="m-lg slider-primary" data-plugin-slider data-plugin-options='{ "value": 50, "max": 100 }'></div>
-									<div class="m-lg slider-success" data-plugin-slider data-plugin-options='{ "value": 50, "max": 100 }'></div>
-									<div class="m-lg slider-warning" data-plugin-slider data-plugin-options='{ "value": 50, "max": 100 }'></div>
-									<div class="m-lg slider-danger"  data-plugin-slider data-plugin-options='{ "value": 50, "max": 100 }'></div>
-									<div class="m-lg slider-info"    data-plugin-slider data-plugin-options='{ "value": 50, "max": 100 }'></div>
-									<div class="m-lg slider-dark"    data-plugin-slider data-plugin-options='{ "value": 50, "max": 100 }'></div>
-
-								</div>
-							</section>
-						</div>
-
-						<div class="col-md-6">
-							<section class="panel">
-								<div class="panel-body">
-
-									<div class="mt-lg mb-lg slider-primary" data-plugin-slider data-plugin-options='{ "value": 50, "range": "min", "max": 100 }' data-plugin-slider-output="#listenSlider">
-										<input id="listenSlider" type="hidden" value="50" />
+						<div class="col-md-12">
+							<section class="panel panel-success">
+								<header class="panel-heading">
+									<div class="panel-actions">
+										<a href="#" class="fa fa-caret-down"></a>
+										<a href="#" class="fa fa-times"></a>
 									</div>
-									<p class="output">The current value is: <b>50</b></p>
 
-									<div class="mt-lg mb-lg slider-primary" data-plugin-slider data-plugin-options='{ "values": [ 25, 75 ], "range": true, "max": 100 }' data-plugin-slider-output="#listenSlider2">
-										<input id="listenSlider2" type="hidden" value="25, 75" />
-									</div>
-									<p class="output2">The min is: <b class="min">25</b> and the max is: <b class="max">75</b></p>
-								</div>
-							</section>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-6">
-							<section class="panel">
+									<h2 class="panel-title">stats of registered games</h2>
+								</header>
 								<div class="panel-body">
-
-									<div class="m-lg"                data-plugin-slider data-plugin-options='{ "value": 90, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-primary" data-plugin-slider data-plugin-options='{ "value": 80, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-success" data-plugin-slider data-plugin-options='{ "value": 70, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-warning" data-plugin-slider data-plugin-options='{ "value": 60, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-danger"  data-plugin-slider data-plugin-options='{ "value": 50, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-info"    data-plugin-slider data-plugin-options='{ "value": 40, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-dark"    data-plugin-slider data-plugin-options='{ "value": 30, "range": "max", "max": 100 }'></div>
-
+									<div id="chartContainer" style="height: 370px; width: 100%;">
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 								</div>
 							</section>
-						</div>
-
-						<div class="col-md-6">
-							<section class="panel">
-								<div class="panel-body">
-
-									<div class="m-lg"                data-plugin-slider data-plugin-options='{ "value": 10, "range": "min", "max": 100 }'></div>
-									<div class="m-lg slider-primary" data-plugin-slider data-plugin-options='{ "value": 20, "range": "min", "max": 100 }'></div>
-									<div class="m-lg slider-success" data-plugin-slider data-plugin-options='{ "value": 30, "range": "min", "max": 100 }'></div>
-									<div class="m-lg slider-warning" data-plugin-slider data-plugin-options='{ "value": 40, "range": "min", "max": 100 }'></div>
-									<div class="m-lg slider-danger"  data-plugin-slider data-plugin-options='{ "value": 50, "range": "min", "max": 100 }'></div>
-									<div class="m-lg slider-info"    data-plugin-slider data-plugin-options='{ "value": 60, "range": "min", "max": 100 }'></div>
-									<div class="m-lg slider-dark"    data-plugin-slider data-plugin-options='{ "value": 70, "range": "min", "max": 100 }'></div>
-
-								</div>
-							</section>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-6">
-							<section class="panel">
-								<div class="panel-body text-center">
-
-									<div class="m-lg"                data-plugin-slider data-plugin-options='{ "value": 90, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-primary" data-plugin-slider data-plugin-options='{ "value": 80, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-success" data-plugin-slider data-plugin-options='{ "value": 70, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-warning" data-plugin-slider data-plugin-options='{ "value": 60, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-danger"  data-plugin-slider data-plugin-options='{ "value": 50, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-info"    data-plugin-slider data-plugin-options='{ "value": 40, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-dark"    data-plugin-slider data-plugin-options='{ "value": 30, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-
-								</div>
-							</section>
-						</div>
-
-						<div class="col-md-6">
-							<section class="panel">
-								<div class="panel-body text-center">
-
-									<div class="m-lg"                data-plugin-slider data-plugin-options='{ "value": 10, "range": "max", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-primary" data-plugin-slider data-plugin-options='{ "value": 20, "range": "max", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-success" data-plugin-slider data-plugin-options='{ "value": 30, "range": "max", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-warning" data-plugin-slider data-plugin-options='{ "value": 40, "range": "max", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-danger"  data-plugin-slider data-plugin-options='{ "value": 50, "range": "max", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-info"    data-plugin-slider data-plugin-options='{ "value": 60, "range": "max", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-dark"    data-plugin-slider data-plugin-options='{ "value": 70, "range": "max", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-
-								</div>
-							</section>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-6">
-							<section class="panel">
-								<div class="panel-body">
-
-									<div class="m-lg"                data-plugin-slider data-plugin-options='{ "values": [ 15, 25 ], "range": true, "max": 100 }'></div>
-									<div class="m-lg slider-primary" data-plugin-slider data-plugin-options='{ "values": [ 25, 35 ], "range": true, "max": 100 }'></div>
-									<div class="m-lg slider-success" data-plugin-slider data-plugin-options='{ "values": [ 35, 45 ], "range": true, "max": 100 }'></div>
-									<div class="m-lg slider-warning" data-plugin-slider data-plugin-options='{ "values": [ 45, 55 ], "range": true, "max": 100 }'></div>
-									<div class="m-lg slider-danger"  data-plugin-slider data-plugin-options='{ "values": [ 55, 65 ], "range": true, "max": 100 }'></div>
-									<div class="m-lg slider-info"    data-plugin-slider data-plugin-options='{ "values": [ 65, 75 ], "range": true, "max": 100 }'></div>
-									<div class="m-lg slider-dark"    data-plugin-slider data-plugin-options='{ "values": [ 75, 85 ], "range": true, "max": 100 }'></div>
-
-								</div>
-							</section>
-						</div>
-
-						<div class="col-md-6">
-							<section class="panel">
-								<div class="panel-body text-center">
-
-									<div class="m-lg"                data-plugin-slider data-plugin-options='{ "values": [ 10, 30 ], "range": true, "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-primary" data-plugin-slider data-plugin-options='{ "values": [ 20, 40 ], "range": true, "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-success" data-plugin-slider data-plugin-options='{ "values": [ 30, 50 ], "range": true, "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-warning" data-plugin-slider data-plugin-options='{ "values": [ 40, 60 ], "range": true, "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-danger"  data-plugin-slider data-plugin-options='{ "values": [ 50, 70 ], "range": true, "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-info"    data-plugin-slider data-plugin-options='{ "values": [ 60, 80 ], "range": true, "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-dark"    data-plugin-slider data-plugin-options='{ "values": [ 70, 90 ], "range": true, "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-
-								</div>
-							</section>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-md-6">
-							<section class="panel">
-								<div class="panel-body">
-
-									<div class="m-lg slider-gradient"                data-plugin-slider data-plugin-options='{ "value": 90, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-gradient slider-primary" data-plugin-slider data-plugin-options='{ "value": 80, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-gradient slider-success" data-plugin-slider data-plugin-options='{ "value": 70, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-gradient slider-warning" data-plugin-slider data-plugin-options='{ "value": 60, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-gradient slider-danger"  data-plugin-slider data-plugin-options='{ "value": 50, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-gradient slider-info"    data-plugin-slider data-plugin-options='{ "value": 40, "range": "max", "max": 100 }'></div>
-									<div class="m-lg slider-gradient slider-dark"    data-plugin-slider data-plugin-options='{ "value": 30, "range": "max", "max": 100 }'></div>
-
-								</div>
-							</section>
-						</div>
-
-						<div class="col-md-6">
-							<section class="panel">
-								<div class="panel-body text-center">
-
-									<div class="m-lg slider-gradient"                data-plugin-slider data-plugin-options='{ "value": 10, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-gradient slider-primary" data-plugin-slider data-plugin-options='{ "value": 20, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-gradient slider-success" data-plugin-slider data-plugin-options='{ "value": 30, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-gradient slider-warning" data-plugin-slider data-plugin-options='{ "value": 40, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-gradient slider-danger"  data-plugin-slider data-plugin-options='{ "value": 50, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-gradient slider-info"    data-plugin-slider data-plugin-options='{ "value": 60, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-									<div class="m-lg slider-gradient slider-dark"    data-plugin-slider data-plugin-options='{ "value": 70, "range": "min", "max": 100, "orientation": "vertical" }' style="height: 156px;"></div>
-
-								</div>
-							</section>
-						</div>
-					</div>
-
+						
+								
+								
+							
+						
+						
 					<!-- end: page -->
 				</section>
 			</div>
@@ -994,8 +834,19 @@
 		<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 		
 		<!-- Specific Page Vendor -->
-		<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
-		<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+		<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+		<script src="assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.js"></script>
+		<script src="assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.pie.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.categories.js"></script>
+		<script src="assets/vendor/flot/jquery.flot.resize.js"></script>
+		<script src="assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+		<script src="assets/vendor/raphael/raphael.js"></script>
+		<script src="assets/vendor/morris/morris.js"></script>
+		<script src="assets/vendor/gauge/gauge.js"></script>
+		<script src="assets/vendor/snap-svg/snap.svg.js"></script>
+		<script src="assets/vendor/liquid-meter/liquid.meter.js"></script>
 		
 		<!-- Theme Base, Components and Settings -->
 		<script src="assets/javascripts/theme.js"></script>
@@ -1007,21 +858,7 @@
 		<script src="assets/javascripts/theme.init.js"></script>
 
 
-		<!-- Demo Purpose Only -->
-		<script>
-			(function() {
-				$('#listenSlider').change(function() {
-					$('.output b').text( this.value );
-				});
-
-				$('#listenSlider2').change(function() {
-					var min = parseInt(this.value.split('/')[0], 10);
-					var max = parseInt(this.value.split('/')[1], 10);
-
-					$('.output2 b.min').text( min );
-					$('.output2 b.max').text( max );
-				});
-			})();
-		</script>
+		<!-- Examples -->
+		<script src="assets/javascripts/ui-elements/examples.charts.js"></script>
 	</body>
 </html>

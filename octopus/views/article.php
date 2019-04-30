@@ -2,7 +2,7 @@
 include "../core/ArtcileC.php";
 $Article1C=new ArticleC();
 $list=$Article1C->showarticles();
-
+session_start(); 
 ?>
 <!doctype html>
 <html class="fixed">
@@ -232,35 +232,37 @@ $list=$Article1C->showarticles();
 			
 					<span class="separator"></span>
 			
-					<div id="userbox" class="userbox">
-						<a href="#" data-toggle="dropdown">
-							<figure class="profile-picture">
-								<img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
-							</figure>
-							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name">John Doe Junior</span>
-								<span class="role">administrator</span>
-							</div>
-			
-							<i class="fa custom-caret"></i>
-						</a>
-			
-						<div class="dropdown-menu">
-							<ul class="list-unstyled">
-								<li class="divider"></li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
-								</li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
-								</li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+					<div  class="userbox">
+                        <a href="pages-signin.html" >
+                            
+                            <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
+                                <a href="logout.php"><?php
+
+ 
+// On récupère nos variables de session
+if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+{ 
+
+	 echo '<a href="./logout.php">Welcome </a>'.$_SESSION['l'].
+'</br>'; 
+
+}
+
+else {  
+	  echo '<a href="pages-signin.html"">Cliquer pour se connecter</a>';
+
+}  
+//définir la session une session est un tableau temporaire 
+//1 er point c quoi une session
+// 
+?></a>
+                            </div>
+            
+                            
+                        </a>
+            
+                        
+                    </div>
 				<!-- end: search & user box -->
 			</header>
 			<!-- end: header -->
@@ -329,6 +331,11 @@ $list=$Article1C->showarticles();
 											<li>
 												<a href="mygames.php">
 													 My Games
+												</a>
+											</li>
+											<li>
+												<a href="stats.php">
+													 Article's Stat's
 												</a>
 											</li>
 											
@@ -610,8 +617,8 @@ $list=$Article1C->showarticles();
 										<i class="fa fa-home"></i>
 									</a>
 								</li>
-								<li><span>Pages</span></li>
-								<li><span>Blank Page</span></li>
+								<li><span>News</span></li>
+								<li><span>Articles</span></li>
 							</ol>
 					
 							<a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -665,8 +672,10 @@ $list=$Article1C->showarticles();
 										<?php } ?>
 									</tbody>
 								</table>
-								<div><button type="button" ><a href="imprimerarticle.php">IMPRIMER</a></button>
-							</div>
+								<div> <br><button type="button" ><a href="imprimerarticle.php">DOWNLOAD PDF</a></button>
+							</div> <br>
+							<hr size="10" color="blue">
+							<a href="printF.php" target="_blank" class="btn btn-primary ml-sm"><i class="fa fa-print"></i> Print</a>
 						</section>
 <form method="post" action="modifyarticle.php">
 					
@@ -677,7 +686,7 @@ $list=$Article1C->showarticles();
 											
 										</div>
 
-										<h2 class="panel-title">Modify an article</h2> 
+										<h2 class="panel-title">Edit an article</h2> 
 
 										
 									</header>

@@ -1,7 +1,7 @@
 <?PHP
-include "../core/gameC.php";
-$game1C=new gameC();
-$list=$game1C->showgames();
+include "../core/ArtcileC.php";
+$article1C=new articleC();
+$list=$article1C->showarticles();
 
  $connect = mysqli_connect("localhost", "root", "", "source_projet2a");
 
@@ -15,11 +15,11 @@ $list=$game1C->showgames();
                              
                                   }  
 
-      $query = "UPDATE game SET image = '$file' WHERE id = $last";  
+      $query = "UPDATE article SET image = '$file' WHERE id = $last";  
       if(mysqli_query($connect, $query))  
       {  
            echo '<script>alert("Image Inserted into Database")</script>';
-           header('Location: mygames.php');
+           header('Location: article.php');
            
       }  
     }
@@ -146,6 +146,6 @@ $list=$game1C->showgames();
       });  
  });  
  <?PHP
-header('Location: Games.html');
+header('Location: article.php');
 ?>
  </script>  

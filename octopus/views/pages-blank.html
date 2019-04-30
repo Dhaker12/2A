@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="fixed">
 	<head>
@@ -226,35 +227,19 @@
 			
 					<span class="separator"></span>
 			
-					<div id="userbox" class="userbox">
-						<a href="#" data-toggle="dropdown">
-							<figure class="profile-picture">
-								<img src="assets/images/!logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="assets/images/!logged-user.jpg" />
-							</figure>
-							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name">John Doe Junior</span>
-								<span class="role">administrator</span>
-							</div>
-			
-							<i class="fa custom-caret"></i>
-						</a>
-			
-						<div class="dropdown-menu">
-							<ul class="list-unstyled">
-								<li class="divider"></li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="pages-user-profile.html"><i class="fa fa-user"></i> My Profile</a>
-								</li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
-								</li>
-								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+					<div  class="userbox">
+                        <a href="pages-signin.html" >
+                            
+                            <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@JSOFT.com">
+                                <a href="logout.php">Welcome  <?php  
+ session_start();  echo $_SESSION['l']; ?></a>
+                            </div>
+            
+                            
+                        </a>
+            
+                        
+                    </div>
 				<!-- end: search & user box -->
 			</header>
 			<!-- end: header -->
@@ -323,6 +308,11 @@
 											<li>
 												<a href="mygames.php">
 													 My Games
+												</a>
+											</li>
+											<li>
+												<a href="stats.php">
+													 Article's Stat's
 												</a>
 											</li>
 											
@@ -619,6 +609,9 @@
 <form enctype="multipart/form-data" class="formoid-solid-blue" style="background-color:#1A2223;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post" action="addarticle.php">
 	<div class="title"><h2>Article</h2></div >
 	<form method="post" action="addarticle.php"> 
+		<div class="element-input" title="Name"><label class="title"><span class="required">*</span></label>
+		<div class="item-cont"><input class="large" type="text" name="name" required="required" placeholder="Name"/><span class="icon-place"></span></div>
+	</div>
 	<div class="element-input" title="Avatar">
 		<label class="title">
 			<span class="required">*</span>
@@ -641,8 +634,9 @@
 		</div>
 	</div>
 	
-	<div class="element-radio"><label class="title">Radio Buttons</label>		<div class="column column1"><label><input type="radio" name="type" value="MMO" /><span>MMO</span></label><label><input type="radio" name="type" value="Strategy" /><span>Strategy</span></label><label><input type="radio" name="type" value="Action" /><span>Action</span></label></div><span class="clearfix"></span>
+	<div class="element-radio"><label class="title">Type</label>		<div class="column column1"><label><input type="radio" name="type" value="MMO" /><span>MMO</span></label><label><input type="radio" name="type" value="Strategy" /><span>Strategy</span></label><label><input type="radio" name="type" value="Action" /><span>Action</span></label></div><span class="clearfix"></span>
 </div>
+<div class="element-input" title="Name"><label class="title"></label><div class="item-cont"><input class="large" type="hidden" name="image" /></div></div>
 <div class="submit">
 	<input type="submit" value="Submit"/>
 </div>
